@@ -6,56 +6,26 @@
 <div class="row">
     <div class="col-lg-8 col-md-8">
         <ul id="ListNews" class="row">
-            <li class="col-lg-6 col-md-6 newsTpl1">
+            {% for article in articles %}
+            <li class="col-lg-6 col-md-6 newsTpl{#{{ loop.index % 2 }}#}">
                 <article>
-                    <img src="#"/>
+                    <img src="{{ article.thumbnail }}"/>
                     <div class="content">
-                        <h3>Lorem ipsum</h3>
-                        <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-                        <a href="#">En savoir plus</a>
-                        <p class="posted"><small>postée le 12/01/2014</small></p>
+                        <h3>{{ article.post_title }}</h3>
+                        <p>{{ article.post_content }}</p>
+                        <a href="{{ article.permalink }}">En savoir plus</a>
+                        <p class="posted"><small>postée le {{ post_date|date('d/m/Y') }}</small></p>
                     </div>
                 </article>
             </li>
-            <li class="col-lg-6 col-md-6 newsTpl2">
-                <article>
-                    <img src="#"/>
-                    <div class="content">
-                        <h3>Lorem ipsum</h3>
-                        <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-                        <a href="#">En savoir plus</a>
-                        <p class="posted"><small>postée le 12/01/2014</small></p>
-                    </div>
-                </article>
-            </li>
-            <li class="col-lg-6 col-md-6 newsTpl1">
-                <article>
-                    <img src="#"/>
-                    <div class="content">
-                        <h3>Lorem ipsum</h3>
-                        <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-                        <a href="#">En savoir plus</a>
-                        <p class="posted"><small>postée le 12/01/2014</small></p>
-                    </div>
-                </article>
-            </li>
-            <li class="col-lg-6 col-md-6 newsTpl2">
-                <article>
-                    <img src="#"/>
-                    <div class="content">
-                        <h3>Lorem ipsum</h3>
-                        <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
-                        <a href="#">En savoir plus</a>
-                        <p class="posted"><small>postée le 12/01/2014</small></p>
-                    </div>
-                </article>
-            </li>
+            {% endfor %}
         </ul>
         <a id="MoreNews" href="#" class="col-lg-12 col-md-12"><div>Voir toutes les actualités</div></a>
     </div>
     <div class="col-lg-4 col-md-4">
         <section id="Calendar">
-            <h3>
+            {{ calendrier|raw }}
+            {#<h3>
                 <button class="before"></button>
                 <span>Février 2014</span>
                 <button class="after"></button>
@@ -126,7 +96,7 @@
                         <td class="otherMonth"><span>8</span></td>
                     </tr>
                 </table>
-            </div>
+            </div>#}
         </section>
         <section id="ListNextEvents">
             <h3>Evénements à venir</h3>

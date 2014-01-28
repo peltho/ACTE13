@@ -6068,6 +6068,12 @@ td.visible-print {
 #MoreNews >div:hover {
   background: #676764;
 }
+#Calendar .ai1ec-calendar-toolbar,
+#Calendar #ai1ec-today,
+#Calendar #ai1ec-prev-year,
+#Calendar #ai1ec-next-year {
+  display: none;
+}
 #Calendar h3 {
   background: #676764;
   color: white;
@@ -6125,11 +6131,11 @@ td.visible-print {
   overflow: hidden;
 }
 #Calendar .content table .day,
-#Calendar .content table .week {
+#Calendar .content table .ai1ec-week {
   text-align: center;
 }
 #Calendar .content table .day >td,
-#Calendar .content table .week >td {
+#Calendar .content table .ai1ec-week >td {
   height: 0;
   box-sizing: border-box;
   background: #eeeeee;
@@ -6139,16 +6145,16 @@ td.visible-print {
   color: #676764;
 }
 #Calendar .content table .day >td.active,
-#Calendar .content table .week >td.active {
+#Calendar .content table .ai1ec-week >td.active {
   background: #a90000;
   color: #fff;
 }
-#Calendar .content table .day >td.otherMonth,
-#Calendar .content table .week >td.otherMonth {
+#Calendar .content table .day >td.ai1ec-empty,
+#Calendar .content table .ai1ec-week >td.ai1ec-empty {
   color: #b2b2b2;
 }
 #Calendar .content table .day >td >span,
-#Calendar .content table .week >td >span {
+#Calendar .content table .ai1ec-week >td >span {
   position: absolute;
   top: 50%;
   margin-left: -1px;
