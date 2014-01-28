@@ -1,4 +1,5 @@
 #Calendar{
+  .ai1ec-calendar-toolbar, #ai1ec-today, #ai1ec-prev-year, #ai1ec-next-year { display: none; }
   h3{
     background:@darkGray;
     color:white;
@@ -52,7 +53,7 @@
       background:@white;
       overflow:hidden;
 
-      .day,.week{
+      .day,.ai1ec-week{
         text-align:center;
         >td{
           height:0;
@@ -66,7 +67,7 @@
             background:@blue;
             color:@white;
           }
-          &.otherMonth{
+          &.ai1ec-empty{
             color:#b2b2b2;
           }
           >span{

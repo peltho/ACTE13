@@ -8,6 +8,7 @@
  */
 
 get_header();
+$toRender = "";
 $twig = initTwig('');
 
 echo $twig->render('index.twig', array('render'=>$toRender));
