@@ -1,0 +1,23 @@
+#BackToTop{
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  display:block;
+  width:50px;
+  background-color: @blue;
+  background-repeat: no-repeat;
+  background-image: url(../images/ico_backToTop.png);
+  background-position: center center;
+  height:50px;
+  opacity:0;
+  transition:opacity 0.3s,background-position 0.3s;
+  &.display{
+    opacity:1;
+  }
+  &.noDisplay{
+    display:none;
+  }
+  &:hover{
+    background-position: center 5px;
+  }
+}

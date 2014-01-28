@@ -1,0 +1,167 @@
+#Calendar{
+  h3{
+    background:@darkGray;
+    color:white;
+    text-align:center;
+    position:relative;
+    display:inline-block;
+    width:100%;
+    padding:7px 0px;
+    margin:0;
+    span{
+      font-weight:normal;
+      vertical-align:middle;
+      font-variant: small-caps;
+      font-size:1.6rem;
+      padding:0px;
+      margin:0px;
+    }
+    .before,.after{
+      top:50%;
+      margin-top:-15px;
+      width:24px;
+      border:0;
+      position:absolute;
+      height:30px;
+      transition:all 0.3s;
+      &:focus{
+        outline:none;
+      }
+    }
+    .before{
+      background:url(../images/ico-arrowLeft.png) center left no-repeat;
+      left:7px;
+      &:hover{
+        left:2px;
+      }
+    }
+    .after{
+      background:url(../images/ico-arrowRight.png) center right no-repeat;
+      right:5px;
+      &:hover{
+        right:2px;
+      }
+    }
+  }
+  .content{
+    background:@white;
+    padding:0 3%;
+    padding-bottom:20px;
+    table{
+      width:100%;
+      background:@white;
+      overflow:hidden;
+
+      .day,.week{
+        text-align:center;
+        >td{
+          height:0;
+          box-sizing:border-box;
+          background:@lightGray;
+          border:8px solid @white;
+          position:relative;
+          padding-bottom:11%;
+          color:@darkGray;
+          &.active{
+            background:@blue;
+            color:@white;
+          }
+          &.otherMonth{
+            color:#b2b2b2;
+          }
+          >span{
+            position:absolute;
+            top:50%;
+            margin-left: -1px;
+            width: 100%;
+            display: block;
+            margin-top:-10px;
+          }
+        }
+      }
+      .day{
+        >td{color:@blue;}
+      }
+    }
+  }
+}
+
+#ListNextEvents{
+  h3{
+    background:@blue;
+    color:white;
+    text-align:center;
+    position:relative;
+    width:100%;
+    padding:5px 0px;
+    margin:0;
+    font-weight:normal;
+    font-variant: small-caps;
+    font-size:1.6rem;
+  }
+  >.listMonths{
+    padding:0;
+    margin:0;
+    list-style:none;
+    ul{
+      padding:0;
+      margin:0;
+      list-style:none;
+    }
+    h4{
+      background:@darkGray;
+      color:white;
+      text-align:center;
+      position:relative;
+      width:100%;
+      padding:1px 0px;
+      margin:0;
+      font-weight:normal;
+      font-variant: small-caps;
+      font-size:1.6rem;
+    }
+    .listEvents{
+      padding:0px 0px 3px 0px;
+      background:@white;
+      >li{
+        background:@white;
+        &.second{
+          background:@lightGray;
+        }
+        a{
+          display:block;
+          height:60px;
+          color:@darkGray;
+          transition: border-left 0.3s;
+          border-left:3px solid white;
+          border-right:3px solid white;
+          &:hover{
+            text-decoration:none;
+            border-left:3px solid @blue;
+          }
+          img{
+            height:50px;
+            transition: margin 0.3s;
+            width:50px;
+            margin: 5px 0px 0px 5px;
+          }
+          div{
+            display:inline-block;
+            vertical-align:middle;
+            margin-left:5px;
+            >.date{
+              margin:0;
+              font-size:1.2rem;
+            }
+          }
+          h5{
+            margin:0;
+            padding:0;
+            display:inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}

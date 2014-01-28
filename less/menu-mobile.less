@@ -1,0 +1,98 @@
+#jPanelMenu-menu{
+  display:none !important;
+  background-color:white;
+  overflow:hidden;
+  z-index:1 !important;
+  padding:0;
+  list-style: none;
+  overflow-y:hidden !important;
+  .sub-menu{
+    max-height:0px;
+    overflow:hidden;
+    list-style: none;
+    text-align: right;
+    transition:all 0.3s;
+    >li{
+      a{
+        padding:8px 0px;
+        display:block;
+        color:@darkGray;
+        position:relative;
+        padding-right:10px;
+        &:hover{
+          text-decoration: none;
+          background:@lightGray;
+        }
+        .transition(0.3s);
+        &:before{
+          content:' ';
+          background:@darkGray;
+          display:block;
+          top:0px;
+          position:absolute;
+          right:0px;
+          width:75%;
+          height:1px;
+        }
+      }
+    }
+  }
+  &.open {
+    display:block !important;
+  }
+  &:before{
+    padding:10px 0px;
+    content:'Menu';
+    background:white;
+    text-align:center;
+    font-weight:300;
+    color:@darkGray;
+    text-transform:uppercase;
+    font-size:1.4em;
+    display:block;
+    border-bottom:2px solid @blue;
+
+  }
+  >li{
+    background:white;
+    display:block;
+    .transition(0.3s);
+    &:hover,.current-menu-item{
+      text-decoration:none;
+      >a{
+        background:@blue;
+        color:white;
+      }
+      >.sub-menu{
+        max-height:300px;
+      }
+    }
+    >a{
+      text-align:right;
+      color:@darkGray;
+      display:block;
+      padding:15px 0px;
+      position:relative;
+      padding-right:10px;
+      font-size:1.2em;
+      .transition(0.3s);
+      &:before{
+        content:' ';
+        background:@darkGray;
+        display:block;
+        top:0px;
+        position:absolute;
+        right:0px;
+        width:85%;
+        height:1px;
+      }
+      &:hover{
+        text-decoration:none;
+      }
+    }
+    &:first-child>a:before{
+      display:none;
+    }
+
+  }
+}

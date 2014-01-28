@@ -1,0 +1,114 @@
+#Header{
+  &.fixed{
+    position:fixed;
+    top:0;
+    z-index:100;
+    width:100%;
+    background:white;
+    height:60px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+    #headerCarousel{
+      display:none;
+    }
+    #LogoContainer{
+      margin-top:0px;
+      >.row{
+        position:absolute;
+        top:0;
+        width:83.333333333333%;
+      }
+      #MainNavigation{
+        margin-top:0;
+        >li>a{
+          padding:15px 0px;
+          height:60px;
+        }
+      }
+      #NomAssociation{
+        display:none;
+      }
+      #Logo{
+        height:50px;
+        width:auto;
+        margin-top:5px;
+      }
+    }
+  }
+}
+
+#LogoContainer{
+  margin-top:35px;
+  #Logo {
+    width:140px;
+  }
+  #NomAssociation{
+    display:inline-block;
+    vertical-align:middle;
+    font-weight:normal;
+    font-variant: small-caps;
+    font-size:2.4rem;
+    font-smooth: always;
+    margin-left:30px;
+    color:@darkGray;
+  }
+}
+
+
+#MainNavigation{
+  margin:0;
+  margin-top:60px;
+  padding:0;
+  list-style:none;
+  >li{
+    border-left:1px solid white;
+    float:left;
+    font-weight:normal;
+    font-variant: small-caps;
+    font-size:1.6rem;
+    width:14.285%;
+    text-align:center;
+    background:@darkGray;
+    &:not(.current-menu-item){
+      >a:hover{
+        background:@lightGray;
+        color:@darkGray;
+      }
+    }
+    &.current-menu-item{
+      background:@blue;
+      a{
+        position:relative;
+        &:after {
+          bottom: -20px;
+          left: 50%;
+          margin-left: -10px;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          z-index:15;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-top-color: @blue;
+          border-width: 10px;
+        }
+      }
+    }
+    &:first-child{
+      border-left:0px;
+    }
+    >a{
+      display:block;
+      height:35px;
+      transition: all 0.3s;
+      padding:5px 0px;
+      width:100%;
+      color:white;
+      &:hover{
+        text-decoration:none;
+      }
+
+    }
+
+  }
+}

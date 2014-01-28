@@ -7,11 +7,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-$toRender[]='';
+$toRender['menu'] = wp_nav_menu( array( 'theme_location' => 'footer_nav','depth'=>1,'echo'=>0,'container' =>'','items_wrap' => '%3$s') );
 $twig = initTwig('');
 
-echo $twig->render('footer.twig', $toRender);
+echo $twig->render('footer.twig', array('render'=>$toRender));
 
-if( current_user_can( 'manage_options' )) {
-    wp_footer();
-}
+
+wp_footer();
