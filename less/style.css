@@ -5990,30 +5990,25 @@ td.visible-print {
   margin: 0px;
   list-style: none;
 }
-#ListNews .newsTpl1,
-#ListNews .newsTpl2 {
+#ListNews .newsTpl {
   margin-bottom: 20px;
 }
-#ListNews .newsTpl1 >article,
-#ListNews .newsTpl2 >article {
+#ListNews .newsTpl >article {
   height: 300px;
   max-height: 300px;
   background: #fff;
 }
-#ListNews .newsTpl1 >article >img,
-#ListNews .newsTpl2 >article >img {
+#ListNews .newsTpl >article >img {
   width: 100%;
   position: relative;
   height: 135px;
 }
-#ListNews .newsTpl1 >article >.content,
-#ListNews .newsTpl2 >article >.content {
+#ListNews .newsTpl >article >.content {
   height: 165px;
   position: relative;
   padding: 10px 10px 4px 10px;
 }
-#ListNews .newsTpl1 >article >.content:before,
-#ListNews .newsTpl2 >article >.content:before {
+#ListNews .newsTpl >article >.content:before {
   transition: all 0.5s;
   content: " ";
   width: 16px;
@@ -6023,8 +6018,7 @@ td.visible-print {
   left: -8px;
   position: absolute;
 }
-#ListNews .newsTpl1 >article >.content >h3,
-#ListNews .newsTpl2 >article >.content >h3 {
+#ListNews .newsTpl >article >.content >h3 {
   color: #a90000;
   margin: 0px;
   font-weight: 500;
@@ -6032,40 +6026,26 @@ td.visible-print {
   font-size: 1.8rem;
   margin-bottom: 8px;
 }
-#ListNews .newsTpl1 >article >.content >p,
-#ListNews .newsTpl2 >article >.content >p {
+#ListNews .newsTpl >article >.content >p {
   font-size: 1rem;
   color: #676764;
 }
-#ListNews .newsTpl1 >article >.content >a,
-#ListNews .newsTpl2 >article >.content >a {
+#ListNews .newsTpl >article >.content >a {
   display: block;
   text-decoration: underline;
   text-align: center;
   font-size: 1rem;
   color: #a90000;
 }
-#ListNews .newsTpl1 >article >.content >a:hover,
-#ListNews .newsTpl2 >article >.content >a:hover {
+#ListNews .newsTpl >article >.content >a:hover {
   text-decoration: none;
 }
-#ListNews .newsTpl1 >article >.content >.posted,
-#ListNews .newsTpl2 >article >.content >.posted {
+#ListNews .newsTpl >article >.content >.posted {
   position: absolute;
   margin: 0;
   right: 30px;
   bottom: 2px;
   text-align: right;
-}
-#ListNews .newsTpl2 >div >img {
-  width: 100%;
-  position: relative;
-  height: 180px;
-}
-#ListNews .newsTpl2 >div >.content {
-  height: 120px;
-  position: relative;
-  padding: 10px 10px 4px 10px;
 }
 #MoreNews {
   display: block;
