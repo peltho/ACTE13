@@ -5792,6 +5792,9 @@ td.visible-print {
   top: 0;
   width: 83.333333333333%;
 }
+#Header.fixed #LogoContainer #MainNavigationContainer {
+  width: 87%;
+}
 #Header.fixed #LogoContainer #MainNavigation {
   margin-top: 0;
 }
@@ -6074,17 +6077,18 @@ td.visible-print {
 #Calendar #ai1ec-next-year {
   display: none;
 }
-#Calendar h3 {
+#Calendar .ai1ec-calendar-title {
   background: #676764;
   color: white;
   text-align: center;
   position: relative;
   display: inline-block;
   width: 100%;
+  font-size: 20px;
   padding: 7px 0px;
   margin: 0;
 }
-#Calendar h3 span {
+#Calendar .ai1ec-calendar-title span {
   font-weight: normal;
   vertical-align: middle;
   font-variant: small-caps;
@@ -6092,69 +6096,79 @@ td.visible-print {
   padding: 0px;
   margin: 0px;
 }
-#Calendar h3 .before,
-#Calendar h3 .after {
+#Calendar .ai1ec-calendar-title #ai1ec-prev-month,
+#Calendar .ai1ec-calendar-title #ai1ec-next-month {
   top: 50%;
   margin-top: -15px;
   width: 24px;
   border: 0;
   position: absolute;
   height: 30px;
+  text-indent: -9999px;
   transition: all 0.3s;
 }
-#Calendar h3 .before:focus,
-#Calendar h3 .after:focus {
+#Calendar .ai1ec-calendar-title #ai1ec-prev-month:focus,
+#Calendar .ai1ec-calendar-title #ai1ec-next-month:focus {
   outline: none;
 }
-#Calendar h3 .before {
+#Calendar .ai1ec-calendar-title #ai1ec-prev-month {
   background: url(../images/ico-arrowLeft.png) center left no-repeat;
   left: 7px;
 }
-#Calendar h3 .before:hover {
+#Calendar .ai1ec-calendar-title #ai1ec-prev-month:hover {
   left: 2px;
 }
-#Calendar h3 .after {
+#Calendar .ai1ec-calendar-title #ai1ec-next-month {
   background: url(../images/ico-arrowRight.png) center right no-repeat;
   right: 5px;
 }
-#Calendar h3 .after:hover {
+#Calendar .ai1ec-calendar-title #ai1ec-next-month:hover {
   right: 2px;
 }
-#Calendar .content {
-  background: #fff;
-  padding: 0 3%;
-  padding-bottom: 20px;
-}
-#Calendar .content table {
-  width: 100%;
-  background: #fff;
-  overflow: hidden;
-}
-#Calendar .content table .day,
-#Calendar .content table .ai1ec-week {
+#Calendar .ai1ec-week,
+#Calendar tr {
   text-align: center;
 }
-#Calendar .content table .day >td,
-#Calendar .content table .ai1ec-week >td {
+#Calendar .ai1ec-week >td,
+#Calendar .ai1ec-week .ai1ec-weekday,
+#Calendar tr >td,
+#Calendar tr .ai1ec-weekday {
   height: 0;
+  width: 14.28%;
   box-sizing: border-box;
   background: #eeeeee;
   border: 8px solid #fff;
   position: relative;
   padding-bottom: 11%;
   color: #676764;
+  transition: all 0.3s;
 }
-#Calendar .content table .day >td.active,
-#Calendar .content table .ai1ec-week >td.active {
-  background: #a90000;
-  color: #fff;
+#Calendar .ai1ec-week >td:hover,
+#Calendar .ai1ec-week .ai1ec-weekday:hover,
+#Calendar tr >td:hover,
+#Calendar tr .ai1ec-weekday:hover {
+  cursor: pointer;
+  background: #676764;
+  color: white;
 }
-#Calendar .content table .day >td.ai1ec-empty,
-#Calendar .content table .ai1ec-week >td.ai1ec-empty {
-  color: #b2b2b2;
+#Calendar .ai1ec-week >td:hover .ai1ec-date +a,
+#Calendar .ai1ec-week .ai1ec-weekday:hover .ai1ec-date +a,
+#Calendar tr >td:hover .ai1ec-date +a,
+#Calendar tr .ai1ec-weekday:hover .ai1ec-date +a {
+  text-decoration: none;
+  width: 90px;
+  opacity: 1;
 }
-#Calendar .content table .day >td >span,
-#Calendar .content table .ai1ec-week >td >span {
+#Calendar .ai1ec-week >td:hover .ai1ec-date +a .ai1ec-event-title,
+#Calendar .ai1ec-week .ai1ec-weekday:hover .ai1ec-date +a .ai1ec-event-title,
+#Calendar tr >td:hover .ai1ec-date +a .ai1ec-event-title,
+#Calendar tr .ai1ec-weekday:hover .ai1ec-date +a .ai1ec-event-title {
+  color: #a90000;
+}
+#Calendar .ai1ec-week >td >div,
+#Calendar .ai1ec-week .ai1ec-weekday >div,
+#Calendar tr >td >div,
+#Calendar tr .ai1ec-weekday >div {
   position: absolute;
   top: 50%;
   margin-left: -1px;
@@ -6162,8 +6176,104 @@ td.visible-print {
   display: block;
   margin-top: -10px;
 }
-#Calendar .content table .day >td {
-  color: #a90000;
+#Calendar .ai1ec-week >td .ai1ec-date +a,
+#Calendar .ai1ec-week .ai1ec-weekday .ai1ec-date +a,
+#Calendar tr >td .ai1ec-date +a,
+#Calendar tr .ai1ec-weekday .ai1ec-date +a {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s;
+  display: block;
+  padding-left: 10px;
+  width: 0px;
+  top: -50%;
+  font-size: 12px;
+  color: #676764;
+  overflow: hidden;
+  font-weight: 300;
+  z-index: 3;
+  left: 40px;
+}
+#Calendar .ai1ec-week >td .ai1ec-date +a .ai1ec-event-popup-bg,
+#Calendar .ai1ec-week .ai1ec-weekday .ai1ec-date +a .ai1ec-event-popup-bg,
+#Calendar tr >td .ai1ec-date +a .ai1ec-event-popup-bg,
+#Calendar tr .ai1ec-weekday .ai1ec-date +a .ai1ec-event-popup-bg {
+  background: white;
+  width: 80px;
+  border: 1px solid #eeeeee;
+  position: relative;
+}
+#Calendar .ai1ec-week >td .ai1ec-date +a .ai1ec-event-popup-bg:after,
+#Calendar .ai1ec-week .ai1ec-weekday .ai1ec-date +a .ai1ec-event-popup-bg:after,
+#Calendar tr >td .ai1ec-date +a .ai1ec-event-popup-bg:after,
+#Calendar tr .ai1ec-weekday .ai1ec-date +a .ai1ec-event-popup-bg:after {
+  left: -20px;
+  top: 50%;
+  margin-top: -10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  z-index: 15;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #a90000;
+  border-width: 10px;
+}
+#Calendar .ai1ec-week >td .ai1ec-date +a .ai1ec-event-time,
+#Calendar .ai1ec-week .ai1ec-weekday .ai1ec-date +a .ai1ec-event-time,
+#Calendar tr >td .ai1ec-date +a .ai1ec-event-time,
+#Calendar tr .ai1ec-weekday .ai1ec-date +a .ai1ec-event-time {
+  font-size: 9px;
+}
+#Calendar .ai1ec-week >td .ai1ec-date +a .ai1ec-event-title:first-letter,
+#Calendar .ai1ec-week .ai1ec-weekday .ai1ec-date +a .ai1ec-event-title:first-letter,
+#Calendar tr >td .ai1ec-date +a .ai1ec-event-title:first-letter,
+#Calendar tr .ai1ec-weekday .ai1ec-date +a .ai1ec-event-title:first-letter {
+  font-weight: bold;
+}
+#Calendar .ai1ec-week >td .ai1ec-date +a .ai1ec-event-summary,
+#Calendar .ai1ec-week >td .ai1ec-date +a .ai1ec-event,
+#Calendar .ai1ec-week .ai1ec-weekday .ai1ec-date +a .ai1ec-event-summary,
+#Calendar .ai1ec-week .ai1ec-weekday .ai1ec-date +a .ai1ec-event,
+#Calendar tr >td .ai1ec-date +a .ai1ec-event-summary,
+#Calendar tr >td .ai1ec-date +a .ai1ec-event,
+#Calendar tr .ai1ec-weekday .ai1ec-date +a .ai1ec-event-summary,
+#Calendar tr .ai1ec-weekday .ai1ec-date +a .ai1ec-event {
+  display: none;
+}
+#Calendar .ai1ec-week >td.ai1ec-event,
+#Calendar .ai1ec-week .ai1ec-weekday.ai1ec-event,
+#Calendar tr >td.ai1ec-event,
+#Calendar tr .ai1ec-weekday.ai1ec-event {
+  background: #a90000 !important;
+  color: #fff !important;
+}
+#Calendar .ai1ec-week >td.ai1ec-empty,
+#Calendar .ai1ec-week .ai1ec-weekday.ai1ec-empty,
+#Calendar tr >td.ai1ec-empty,
+#Calendar tr .ai1ec-weekday.ai1ec-empty {
+  color: #b2b2b2;
+}
+#Calendar .ai1ec-weekday {
+  text-align: center;
+  color: #a90000 !important;
+  font-weight: 300;
+  font-size: 14px !important;
+  font-variant: small-caps;
+}
+#Calendar .ai1ec-weekday:hover {
+  background: #eeeeee !important;
+  color: #a90000 !important;
+}
+#Calendar #ai1ec-calendar-view {
+  background: #fff;
+  padding-bottom: 20px;
+}
+#Calendar #ai1ec-calendar-view table {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
 }
 #ListNextEvents h3 {
   background: #a90000;

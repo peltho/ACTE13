@@ -43,6 +43,7 @@ $(document).ready(function(){
 
     $("#BackToTop").css("bottom",jQuery("footer").height()+40);
     init();
+    $("#ai1ec-calendar-view-loading").css("height", $("#Calendar").height());
 });
 
 jQuery(window).scroll(function() {
@@ -77,6 +78,8 @@ function OpenMenu(){
         jPM.open();
     }
 }
+
+
 
 
 
