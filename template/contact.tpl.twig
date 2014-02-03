@@ -12,7 +12,7 @@
             <div id="GoogleMap" class="col-lg-6"></div>
         </div>
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-10">
+            <div class="col-lg-10 col-lg-offset-1">
                 <form>
                     <input type="text" name="nomContact" id="TxtNom" placeholder="Votre nom et prénom"/>
                     <input type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
@@ -26,19 +26,40 @@
                     </label>
                     <label>
                         <span>Moyen désiré pour le rendez-vous :</span>
-                        
+                        <select name="moyenRDVContact" id="SelMoyenRDV">
+                            <option value="0">Entretien physique</option>
+                            <option value="1">Entretien téléphonique</option>
+                        </select>
                     </label>
                     <label>
                         <span>Date désirée du rendez-vous :</span>
-                        <input type="date" name="DateRDVContact" id="TxtDateRDV" placeholder="jj/mm/aaaa"/>
+                        <input type="date" name="dateRDVContact" id="TxtDateRDV" placeholder="jj/mm/aaaa"/>
                     </label>
                     <label>
                         <span>Heure désirée du rendez-vous :</span>
-                        <select name="HeureRDVContact" id="SelHeureRDV">
-                            <option value="0">Message</option>
-                            <option value="1">Prise de rendez-vous</option>
+                        <select name="heureRDVContact" id="SelHeureRDV">
+                            {% for h in 9..19 %}
+                                {% for j in 0..1 %}
+                                    {% if j %}
+                                        {% set m="30" %}
+                                    {% else %}
+                                        {% set m="00" %}
+                                    {% endif %}
+                                    <option value="{{ h }}h{{ m }}">{{ h }}h{{ m }}</option>
+                                {% endfor %}
+                            {% endfor %}
                         </select>
                     </label>
+                    <label>
+                        <span>Rendez-vous avec :</span>
+                        <select name="quiRDVContact" id="SelQuiRDV">
+                            <option value="Patrick Maurel">Patrick Maurel</option>
+                            <option value="Madame Y">Madame X</option>
+                            <option value="Monsieur Y">Monsieur Y</option>
+                        </select>
+                    </label>
+                    <textarea name="messageContact" id="TxtMessageRDV">Votre message</textarea>
+                    <button name="submitContact" id="BtnSubmitContact">Envoyer</button>
                 </form>
             </div>
         </div>
@@ -58,5 +79,5 @@
         </ul>
         <section id="Calendar">
         </section>
-
+    </div>
 </div>
