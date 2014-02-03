@@ -48,6 +48,8 @@ $(document).ready(function(){
         if($(window).width()<=480) $('#HeaderNavBar').css('margin-top','46px');
         else $('#HeaderNavBar').css('margin-top','32px');
     }
+
+
 });
 //Evenement se déroulant lors du scrolling
 jQuery(window).scroll(function() {
