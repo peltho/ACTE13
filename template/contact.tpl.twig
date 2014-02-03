@@ -4,80 +4,61 @@
     </h1>
 </div>
 <div class="row">
-    <div class="col-lg-8 col-md-8">
+    <p id="DescriptionPage" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+        Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu
+    </p>
+</div>
+<div id="Contact" class="row">
+    <div class="col-lg-12 col-md-12">
         <div class="row">
-            <div class="col-lg-6">
-
-            </div>
-            <div id="GoogleMap" class="col-lg-6"></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
+            <div class="col-lg-5 col-lg-offset-1">
                 <form>
-                    <input type="text" name="nomContact" id="TxtNom" placeholder="Votre nom et prénom"/>
-                    <input type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
-                    <input type="text" name="objetContact" id="TxtObjet" placeholder="Votre adresse mail"/>
-                    <label>
-                        <span>Type de Contact<small>selon les disponibilités</small></span>
-                        <select name="typeContact" id="SelType">
-                            <option value="0">Message</option>
-                            <option value="1">Prise de rendez-vous</option>
-                        </select>
-                    </label>
-                    <label>
-                        <span>Moyen désiré pour le rendez-vous :</span>
-                        <select name="moyenRDVContact" id="SelMoyenRDV">
-                            <option value="0">Entretien physique</option>
-                            <option value="1">Entretien téléphonique</option>
-                        </select>
-                    </label>
-                    <label>
-                        <span>Date désirée du rendez-vous :</span>
-                        <input type="date" name="dateRDVContact" id="TxtDateRDV" placeholder="jj/mm/aaaa"/>
-                    </label>
-                    <label>
-                        <span>Heure désirée du rendez-vous :</span>
-                        <select name="heureRDVContact" id="SelHeureRDV">
-                            {% for h in 9..19 %}
-                                {% for j in 0..1 %}
-                                    {% if j %}
-                                        {% set m="30" %}
-                                    {% else %}
-                                        {% set m="00" %}
-                                    {% endif %}
-                                    <option value="{{ h }}h{{ m }}">{{ h }}h{{ m }}</option>
-                                {% endfor %}
-                            {% endfor %}
-                        </select>
-                    </label>
-                    <label>
-                        <span>Rendez-vous avec :</span>
-                        <select name="quiRDVContact" id="SelQuiRDV">
-                            <option value="Patrick Maurel">Patrick Maurel</option>
-                            <option value="Madame Y">Madame X</option>
-                            <option value="Monsieur Y">Monsieur Y</option>
-                        </select>
-                    </label>
-                    <textarea name="messageContact" id="TxtMessageRDV">Votre message</textarea>
+                    <h2>Formulaire de contact</h2>
+                    <input required type="text" name="nomContact" id="TxtNom" placeholder="Votre nom et prénom"/>
+                    <input required type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
+                    <input required type="text" name="objetContact" id="TxtObjet" placeholder="Objet du message"/>
+                    <textarea placeholder="Votre message" required name="messageContact" id="TxtMessageRDV"></textarea>
                     <button name="submitContact" id="BtnSubmitContact">Envoyer</button>
                 </form>
             </div>
+            <div id="GoogleMapContainer" class="col-lg-5">
+                <div id="GoogleMap"><div class="loader">Chargement de la carte...</div></div>
+                <div id="Coordonnees">
+                    <p>Acte 13</p>
+                    <p>Adresse1</p>
+                    <p>Adresse2</p>
+                    <p>code postale Ville</p>
+                    <p>numTel</p>
+                    <p>numFax</p>
+                    <a href="mail:" class="email">acte13[at]gmail.com</a>
+                </div>
+                <div id="PiecesJointes">
+                    <a href="#" class="link">Télécharger machin chose</a>
+                    <a href="#" class="link">Télécharger truc </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-4 col-md-4">
-        <p>Les rendez-vous se font avec :</p>
-        <ul>
-            <li>
-                <span>Patrick Morel</span>
-            </li>
-            <li>
-                <span>Madame X</span>
-            </li>
-            <li>
-                <span>Monsieur Y</span>
-            </li>
-        </ul>
-        <section id="Calendar">
-        </section>
-    </div>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+    function initialize() {
+        var lat= -25.363882;
+        var lng= 131.044922;
+        var myLatlng = new google.maps.LatLng(lat,lng);
+        var mapOptions = {
+            zoom: 10,
+            center: myLatlng
+        }
+        var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'ACTE13'
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>

@@ -1,5 +1,20 @@
 #Header{
+  position:relative;
+  .mask{
+  position:absolute;
+  left:0px;
+  top:0px;
+  opacity: 1;
+  transition: all 0.3s;
+  width:100%;
+  background:url(../images/background.png);
+  height:349px;
+  }
   &.fixed{
+    .mask{
+    opacity:0;
+    height:0px;
+    }
     position:fixed;
     top:0;
     z-index:100;
