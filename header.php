@@ -14,4 +14,4 @@ $toRender['isHome'] = is_page_template("home.tpl.php");
 
 
 $twig = initTwig('');
-echo $twig->render('header.twig', array('render'=>$toRender));
+echo $twig->render('header.twig', array('render' => $toRender));
