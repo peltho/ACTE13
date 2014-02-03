@@ -5823,6 +5823,7 @@ td.visible-print {
   font-variant: small-caps;
   font-size: 2.4rem;
   font-smooth: always;
+  margin: 0;
   margin-left: 30px;
   color: #676764;
 }
@@ -5988,6 +5989,21 @@ td.visible-print {
   box-shadow: 0px 3px 5px;
   min-height: 600px;
 }
+#Content >p {
+  margin: 0px 20px 40px 20px;
+  color: #676764;
+  overflow: hidden;
+  font-size: 14px;
+}
+#Content h1 {
+  color: #a90000;
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
 #ListNews {
   padding: 0px;
   margin: 0px;
@@ -6070,6 +6086,100 @@ td.visible-print {
 }
 #MoreNews >div:hover {
   background: #676764;
+}
+#Dispositifs-Missions {
+  list-style: none;
+  padding: 0;
+}
+#Dispositifs-Missions >li {
+  background: white;
+  display: block;
+  margin-bottom: 25px;
+  position: relative;
+}
+#Dispositifs-Missions >li >div>div:not(.image) {
+  min-height: 131px;
+  overflow: hidden;
+  padding-bottom: 25px;
+}
+#Dispositifs-Missions >li .image {
+  padding-bottom: 16.666666666667%;
+  height: 1px;
+  background-position: center;
+  background-size: cover;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+#Dispositifs-Missions >li h2 {
+  color: #a90000;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  margin-top: 10px;
+}
+#Dispositifs-Missions >li p {
+  margin-top: 8px;
+  color: #676764;
+  height: 68px;
+  overflow: hidden;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+#Dispositifs-Missions >li p.expandable {
+  height: 100%;
+}
+#Dispositifs-Missions >li button {
+  position: absolute;
+  bottom: 0px;
+  background: none;
+  border: 0px;
+  color: #a90000;
+  font-size: 11px;
+  padding: 0;
+  margin: 0px;
+  left: 0px;
+  width: 100%;
+  margin-top: 0px;
+  display: block;
+  transition: all 0.3s;
+  padding: 5px 0px;
+  text-align: center;
+}
+#Dispositifs-Missions >li button:hover {
+  color: white;
+  background: #676764;
+}
+#Dispositifs-Missions >li button:focus {
+  outline: none;
+}
+#Equipe {
+  list-style: none;
+  padding: 0;
+}
+#Equipe li {
+  margin-bottom: 20px;
+}
+#Equipe li >div {
+  padding: 5px;
+  background: #fff;
+}
+#Equipe li h2 {
+  color: #a90000;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  margin-top: 10px;
+}
+#Equipe li p {
+  margin-top: 8px;
+  color: #676764;
+  overflow: hidden;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+#Equipe li p.poste {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 #Calendar .ai1ec-calendar-toolbar,
 #Calendar #ai1ec-today,

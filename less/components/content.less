@@ -5,6 +5,22 @@
   background:@lightGray;
   box-shadow: 0px 3px 5px; rgba(0,0,0,0.3);
   min-height:600px;
+  >p{
+    margin:0px 20px 40px 20px;
+    color:@darkGray;
+    overflow:hidden;
+    font-size:14px;
+  }
+  h1{
+    color: @blue;
+    font-weight:500;
+    font-size:25px;
+    margin:0px;
+    margin-left:20px;
+    margin-top:10px;
+    margin-bottom:60px;
+
+  }
 }
 
 #Description{
@@ -106,6 +122,102 @@
     font-size:1.6rem;
     &:hover{
       background:@darkGray;
+    }
+  }
+}
+
+#Dispositifs-Missions{
+  list-style:none;
+  padding:0;
+  >li{
+    background:white;
+    display:block;
+    margin-bottom:25px;
+    position:relative;
+    >div>div:not(.image){
+      min-height:131px;
+      overflow:hidden;
+      padding-bottom:25px;
+    }
+    .image{
+      padding-bottom:16.666666666667%;
+      height:1px;
+      background-position:center;
+      background-size:cover;
+      text-indent:-9999px;
+      overflow:hidden;
+    }
+    h2{
+      color:@blue;
+      font-weight:500;
+      font-size:18px;
+      margin:0;
+      margin-top:10px;
+    }
+    p{
+      margin-top:8px;
+      color:@darkGray;
+      height:68px;
+      overflow:hidden;
+      font-size:12px;
+      margin-bottom:0px;
+      &.expandable{
+        height:100%;
+      }
+    }
+    button{
+      position:absolute;
+      bottom:0px;
+      background:none;
+      border:0px;
+      color:@blue;
+      font-size:11px;
+      padding:0;
+      margin:0px;
+      left:0px;
+      width:100%;
+      margin-top:0px;
+      display:block;
+      transition: all 0.3s;
+      padding:5px 0px;
+      text-align:center;
+      &:hover{
+        color:white;
+        background:@darkGray;
+      }
+      &:focus{
+        outline:none;
+      }
+    }
+  }
+}
+
+#Equipe{
+  list-style:none;
+  padding:0;
+  li{
+    margin-bottom:20px;
+    >div{
+      padding:5px;
+      background:@white;
+    }
+    h2{
+      color:@blue;
+      font-weight:500;
+      font-size:18px;
+      margin:0;
+      margin-top:10px;
+    }
+    p{
+      margin-top:8px;
+      color:@darkGray;
+      overflow:hidden;
+      font-size:12px;
+      margin-bottom:0px;
+      &.poste{
+        margin-top:15px;
+        margin-bottom:15px;
+      }
     }
   }
 }

@@ -18,4 +18,5 @@ $toRender['title'] = get_the_title();
 
 $twig = initTwig('');
 echo $twig->render('home.tpl.twig', array('render' => $toRender/*, 'articles' => $articles*/));
+
 get_footer();
