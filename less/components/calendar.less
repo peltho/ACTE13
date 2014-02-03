@@ -1,12 +1,13 @@
 #Calendar{
   .ai1ec-calendar-toolbar, #ai1ec-today, #ai1ec-prev-year, #ai1ec-next-year { display: none; }
-  h3{
+  .ai1ec-calendar-title{
     background:@darkGray;
     color:white;
     text-align:center;
     position:relative;
     display:inline-block;
     width:100%;
+    font-size:20px;
     padding:7px 0px;
     margin:0;
     span{
@@ -17,26 +18,27 @@
       padding:0px;
       margin:0px;
     }
-    .before,.after{
+    #ai1ec-prev-month,#ai1ec-next-month{
       top:50%;
       margin-top:-15px;
       width:24px;
       border:0;
       position:absolute;
       height:30px;
+      text-indent: -9999px;
       transition:all 0.3s;
       &:focus{
         outline:none;
       }
     }
-    .before{
+    #ai1ec-prev-month{
       background:url(../images/ico-arrowLeft.png) center left no-repeat;
       left:7px;
       &:hover{
         left:2px;
       }
     }
-    .after{
+    #ai1ec-next-month{
       background:url(../images/ico-arrowRight.png) center right no-repeat;
       right:5px;
       &:hover{
@@ -44,45 +46,125 @@
       }
     }
   }
-  .content{
+  .ai1ec-month-view{
+
+
+  }
+  .ai1ec-week,tr{
+    text-align:center;
+    >td,.ai1ec-weekday{
+      height:0;
+      width:14.28%;
+      box-sizing:border-box;
+      background:@lightGray;
+      border:8px solid @white;
+      position:relative;
+      padding-bottom:11%;
+      color:@darkGray;
+      transition: all 0.3s;
+      &:hover{
+        cursor:pointer;
+        background:@darkGray;
+        color:white;
+        .ai1ec-date{
+          +a{
+            text-decoration:none;
+            width:90px;
+            opacity:1;
+            .ai1ec-event-title{
+              color: @blue;
+            }
+          }
+        }
+      }
+      >div{
+        position:absolute;
+        top:50%;
+        margin-left: -1px;
+        width: 100%;
+        display: block;
+        margin-top:-10px;
+      }
+      .ai1ec-date{
+        +a{
+          position:absolute;
+          opacity:0;
+          transition: all 0.3s;
+          display:block;
+          padding-left:10px;
+          width:0px;
+          top:-50%;
+
+          font-size:12px;
+          color:@darkGray;
+          overflow:hidden;
+          font-weight:300;
+          z-index:3;
+          left:40px;
+          .ai1ec-event-popup-bg{
+            background:white;
+            width:80px;
+            border:1px solid @lightGray;
+            position:relative;
+            &:after {
+              left: -20px;
+              top: 50%;
+              margin-top: -10px;
+              border: solid transparent;
+              content: " ";
+              height: 0;
+              z-index:15;
+              width: 0;
+              position: absolute;
+              pointer-events: none;
+              border-right-color: @blue;
+              border-width: 10px;
+            }
+          }
+          .ai1ec-event-time{
+            font-size:9px;
+          }
+          .ai1ec-event-title{
+            &:first-letter{
+              font-weight:bold;
+            }
+          }
+          .ai1ec-event-summary,.ai1ec-event {
+            display:none;
+          }
+
+        }
+      }
+
+      &.ai1ec-event{
+        background:@blue !important;
+        color:@white !important;
+      }
+      &.ai1ec-empty{
+        color:#b2b2b2;
+      }
+    }
+  }
+  .ai1ec-weekday{
+    text-align: center;
+    color:@blue !important;
+    font-weight:300;
+    font-size:14px !important;
+    font-variant:small-caps;
+    &:hover{
+      background:@lightGray !important;
+      color:@blue !important;
+    }
+  }
+  #ai1ec-calendar-view{
     background:@white;
-    padding:0 3%;
     padding-bottom:20px;
     table{
       width:100%;
       background:@white;
       overflow:hidden;
 
-      .day,.ai1ec-week{
-        text-align:center;
-        >td{
-          height:0;
-          box-sizing:border-box;
-          background:@lightGray;
-          border:8px solid @white;
-          position:relative;
-          padding-bottom:11%;
-          color:@darkGray;
-          &.active{
-            background:@blue;
-            color:@white;
-          }
-          &.ai1ec-empty{
-            color:#b2b2b2;
-          }
-          >span{
-            position:absolute;
-            top:50%;
-            margin-left: -1px;
-            width: 100%;
-            display: block;
-            margin-top:-10px;
-          }
-        }
-      }
-      .day{
-        >td{color:@blue;}
-      }
+
     }
   }
 }
