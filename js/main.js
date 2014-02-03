@@ -21,6 +21,7 @@ $(document).ready(function(){
         });
     });
 
+    //Menu responsive Jpanel
     jPM = $.jPanelMenu({
         menu: '#MainNavigation',
         direction:'right',
@@ -41,11 +42,16 @@ $(document).ready(function(){
     });
     jPM.on();
 
+    //Réglage de quelques items de navigation
     $("#BackToTop").css("bottom",jQuery("footer").height()+40);
-    init();
-    $("#ai1ec-calendar-view-loading").css("height", $("#Calendar").height());
-});
+    if($('#wpadminbar').length>0){
+        if($(window).width()<=480) $('#HeaderNavBar').css('margin-top','46px');
+        else $('#HeaderNavBar').css('margin-top','32px');
+    }
 
+
+});
+//Evenement se déroulant lors du scrolling
 jQuery(window).scroll(function() {
     if($(window).scrollTop() > 0){
         $("#BackToTop").addClass("display");
@@ -61,16 +67,10 @@ jQuery(window).scroll(function() {
     }
 });
 
-function init(){
-    if($('#wpadminbar').length>0){
-        if($(window).width()<=480) $('#HeaderNavBar').css('margin-top','46px');
-        else $('#HeaderNavBar').css('margin-top','32px');
-    }
-    $(".target>a").attr("onclick","open"+$(".target>a").attr('title')+"();");
-    $(".target>a").removeAttr("href");
-    $(".target>a").css('cursor','pointer');
-}
 
+/* void OpenMenu()
+Permet d'ouvrir et fermer le menu "manuellement"
+ */
 function OpenMenu(){
     if(jPM.isOpen()){
         jPM.open();
@@ -79,6 +79,19 @@ function OpenMenu(){
     }
 }
 
+//Expandable
+$("button[data-expandable]").click(function(){
+    if(!$(this).prev().hasClass("expandable")){
+        console.log($(this));
+        $(this).prev().switchClass("","expandable",300);
+        $(this).attr("data-expandable",'true');
+        $(this).html("Réduire");
+    }else{
+        $(this).prev().switchClass("expandable","",300);
+        $(this).attr("data-expandable",'false');
+        $(this).html("En savoir plus...");
+    }
+});
 
 
 

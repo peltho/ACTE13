@@ -1,0 +1,62 @@
+<div class="row">
+    <h1 class="col-lg-12 col-md-12">
+        HelloH1
+    </h1>
+</div>
+<div class="row">
+    <div class="col-lg-8 col-md-8">
+        <div class="row">
+            <div class="col-lg-6">
+
+            </div>
+            <div id="GoogleMap" class="col-lg-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-10">
+                <form>
+                    <input type="text" name="nomContact" id="TxtNom" placeholder="Votre nom et prénom"/>
+                    <input type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
+                    <input type="text" name="objetContact" id="TxtObjet" placeholder="Votre adresse mail"/>
+                    <label>
+                        <span>Type de Contact<small>selon les disponibilités</small></span>
+                        <select name="typeContact" id="SelType">
+                            <option value="0">Message</option>
+                            <option value="1">Prise de rendez-vous</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Moyen désiré pour le rendez-vous :</span>
+                        
+                    </label>
+                    <label>
+                        <span>Date désirée du rendez-vous :</span>
+                        <input type="date" name="DateRDVContact" id="TxtDateRDV" placeholder="jj/mm/aaaa"/>
+                    </label>
+                    <label>
+                        <span>Heure désirée du rendez-vous :</span>
+                        <select name="HeureRDVContact" id="SelHeureRDV">
+                            <option value="0">Message</option>
+                            <option value="1">Prise de rendez-vous</option>
+                        </select>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <p>Les rendez-vous se font avec :</p>
+        <ul>
+            <li>
+                <span>Patrick Morel</span>
+            </li>
+            <li>
+                <span>Madame X</span>
+            </li>
+            <li>
+                <span>Monsieur Y</span>
+            </li>
+        </ul>
+        <section id="Calendar">
+        </section>
+
+</div>
