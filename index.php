@@ -11,5 +11,5 @@ get_header();
 $toRender = "";
 $twig = initTwig('');
 
-echo $twig->render('index.twig', array('render'=>$toRender));
+echo $twig->render('index.twig', array('render' => $toRender));
 get_footer();

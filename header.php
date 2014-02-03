@@ -12,4 +12,4 @@ $toRender['template_directory'] = get_template_directory_uri();
 $toRender['title'] = get_the_title();
 
 $twig = initTwig('');
-echo $twig->render('header.twig', array('render'=>$toRender));
+echo $twig->render('header.twig', array('render' => $toRender));
