@@ -46,3 +46,4 @@ function acte13_scripts() {
     wp_enqueue_script( 'main' );
 }
 
+add_theme_support('post-thumbnails');
