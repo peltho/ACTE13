@@ -1,6 +1,6 @@
 <div class="row">
     <h1 class="col-lg-12 col-md-12">
-        HelloH1
+        {{ render.title }}
     </h1>
 </div>
 <div class="row">
@@ -13,11 +13,51 @@
         <div class="row">
             <div class="col-lg-5 col-lg-offset-1">
                 <form>
-                    <h2>Formulaire de contact</h2>
-                    <input required type="text" name="nomContact" id="TxtNom" placeholder="Votre nom et prénom"/>
-                    <input required type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
-                    <input required type="text" name="objetContact" id="TxtObjet" placeholder="Objet du message"/>
-                    <textarea placeholder="Votre message" required name="messageContact" id="TxtMessageRDV"></textarea>
+                    <input type="text" name="nomContact" id="TxtNom" placeholder="Votre prénom et nom"/>
+                    <input type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
+                    <input type="text" name="objetContact" id="TxtObjet" placeholder="Votre adresse mail"/>
+                    <label>
+                        <span>Type de Contact<small>selon les disponibilités</small></span>
+                        <select name="typeContact" id="SelType">
+                            <option value="0">Message</option>
+                            <option value="1">Prise de rendez-vous</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Moyen désiré pour le rendez-vous :</span>
+                        <select name="moyenRDVContact" id="SelMoyenRDV">
+                            <option value="0">Entretien physique</option>
+                            <option value="1">Entretien téléphonique</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Date désirée du rendez-vous :</span>
+                        <input type="date" name="dateRDVContact" id="TxtDateRDV" placeholder="jj/mm/aaaa"/>
+                    </label>
+                    <label>
+                        <span>Heure désirée du rendez-vous :</span>
+                        <select name="heureRDVContact" id="SelHeureRDV">
+                            {% for h in 9..19 %}
+                                {% for j in 0..1 %}
+                                    {% if j %}
+                                        {% set m="30" %}
+                                    {% else %}
+                                        {% set m="00" %}
+                                    {% endif %}
+                                    <option value="{{ h }}h{{ m }}">{{ h }}h{{ m }}</option>
+                                {% endfor %}
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <label>
+                        <span>Rendez-vous avec :</span>
+                        <select name="quiRDVContact" id="SelQuiRDV">
+                            <option value="Patrick Maurel">Patrick Morel</option>
+                            <option value="Madame Y">Madame X</option>
+                            <option value="Monsieur Y">Monsieur Y</option>
+                        </select>
+                    </label>
+                    <textarea name="messageContact" id="TxtMessageRDV">Votre message</textarea>
                     <button name="submitContact" id="BtnSubmitContact">Envoyer</button>
                 </form>
             </div>
@@ -27,7 +67,7 @@
                     <p>Acte 13</p>
                     <p>Adresse1</p>
                     <p>Adresse2</p>
-                    <p>code postale Ville</p>
+                    <p>Code postal Ville</p>
                     <p>numTel</p>
                     <p>numFax</p>
                     <a href="mail:" class="email">acte13[at]gmail.com</a>
@@ -43,13 +83,13 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script>
     function initialize() {
-        var lat= -25.363882;
-        var lng= 131.044922;
+        var lat = -25.363882;
+        var lng = 131.044922;
         var myLatlng = new google.maps.LatLng(lat,lng);
         var mapOptions = {
             zoom: 10,
             center: myLatlng
-        }
+        };
         var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
 
         var marker = new google.maps.Marker({
@@ -57,8 +97,14 @@
             map: map,
             title: 'ACTE13'
         });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            var infowindow = new google.maps.InfoWindow({
+                content: marker.title
+            });
+            infowindow.open(marker.get('map'), marker);
+        });
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
-
 </script>

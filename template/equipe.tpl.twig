@@ -1,6 +1,6 @@
 <div class="row">
     <h1 class="col-lg-12 col-md-12">
-        HelloH1
+        {{ render.title }}
     </h1>
 </div>
 <div class="row">
@@ -10,60 +10,14 @@
 </div>
 <div class="row">
     <ul class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1" id="Equipe">
+        {% for r in render.fields %}
         <li class="col-lg-4 col-md-4">
             <div>
-                <h2>HelloH2</h2>
-                <p class="poste">Poste</p>
-                <p>Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu</p>
+                <h2>{{ r.prenom_nom }}</h2>
+                <p class="poste">{{ r.poste }}</p>
+                <p>{{ r.biographie }}</p>
             </div>
         </li>
-
-        <li class="col-lg-4 col-md-4">
-            <div>
-                <h2>HelloH2</h2>
-                <p class="poste">Poste</p>
-                <p>Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu</p>
-            </div>
-        </li>
-
-        <li class="col-lg-4 col-md-4">
-            <div>
-                <h2>HelloH2</h2>
-                <p class="poste">Poste</p>
-                <p>Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu</p>
-            </div>
-        </li>
-
-        <li class="col-lg-4 col-md-4">
-            <div>
-                <h2>HelloH2</h2>
-                <p class="poste">Poste</p>
-                <p>Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu</p>
-            </div>
-        </li>
-
-        <li class="col-lg-4 col-md-4">
-            <div>
-                <h2>HelloH2</h2>
-                <p class="poste">Poste</p>
-                <p>Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu</p>
-            </div>
-        </li>
-
-        <li class="col-lg-4 col-md-4">
-            <div>
-                <h2>HelloH2</h2>
-                <p class="poste">Poste</p>
-                <p>Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu</p>
-            </div>
-        </li>
-
-        <li class="col-lg-4 col-md-4">
-            <div>
-                <h2>HelloH2</h2>
-                <p class="poste">Poste</p>
-                <p>Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu</p>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </div>
