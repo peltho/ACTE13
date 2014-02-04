@@ -5788,14 +5788,15 @@ td.visible-print {
 #Header.fixed {
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 10;
+  transition: height 0.3s;
   width: 100%;
   background: white;
   height: 60px;
   box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
 }
 #Header.fixed .mask {
-  opacity: 0;
+  display: none;
   height: 0px;
 }
 #Header.fixed #headerCarousel {
@@ -6310,6 +6311,225 @@ td.visible-print {
   display: block;
   text-decoration: none;
 }
+#ExperienceEquipe ul,
+#ExperienceJeune ul,
+#ExperienceAncien ul {
+  list-style: none;
+  padding-left: 30px;
+  margin-bottom: 0px;
+}
+#ExperienceEquipe .carousel,
+#ExperienceJeune .carousel,
+#ExperienceAncien .carousel {
+  position: relative;
+}
+#ExperienceEquipe .carousel .flex-control-nav,
+#ExperienceJeune .carousel .flex-control-nav,
+#ExperienceAncien .carousel .flex-control-nav {
+  position: absolute;
+  bottom: -12px;
+}
+#ExperienceEquipe .carousel .flex-direction-nav,
+#ExperienceJeune .carousel .flex-direction-nav,
+#ExperienceAncien .carousel .flex-direction-nav {
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  padding: 0px;
+  margin: 0px;
+  top: 50%;
+}
+#ExperienceEquipe .carousel .flex-direction-nav >li,
+#ExperienceJeune .carousel .flex-direction-nav >li,
+#ExperienceAncien .carousel .flex-direction-nav >li {
+  width: 100%;
+  position: relative;
+}
+#ExperienceEquipe .carousel .flex-direction-nav >li >a,
+#ExperienceJeune .carousel .flex-direction-nav >li >a,
+#ExperienceAncien .carousel .flex-direction-nav >li >a {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  text-indent: -9999px;
+  z-index: 5;
+  top: 50%;
+  height: 32px;
+  width: 22px;
+  margin-top: -16px;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+#ExperienceEquipe .carousel .flex-direction-nav >li .flex-prev,
+#ExperienceJeune .carousel .flex-direction-nav >li .flex-prev,
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-prev {
+  background-image: url(../images/ico-arrowLeftGray.png);
+  background-position: center left;
+  left: -60px;
+}
+#ExperienceEquipe .carousel .flex-direction-nav >li .flex-prev:hover,
+#ExperienceJeune .carousel .flex-direction-nav >li .flex-prev:hover,
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-prev:hover {
+  width: 44px;
+  left: -82px;
+}
+#ExperienceEquipe .carousel .flex-direction-nav >li .flex-next,
+#ExperienceJeune .carousel .flex-direction-nav >li .flex-next,
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-next {
+  background-image: url(../images/ico-arrowRightGray.png);
+  background-position: center right;
+  right: -30px;
+}
+#ExperienceEquipe .carousel .flex-direction-nav >li .flex-next:hover,
+#ExperienceJeune .carousel .flex-direction-nav >li .flex-next:hover,
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-next:hover {
+  width: 44px;
+  right: -52px;
+}
+#ExperienceEquipe .anExperienceEquipe,
+#ExperienceEquipe .anExperienceJeune,
+#ExperienceEquipe .anExperienceAncien,
+#ExperienceJeune .anExperienceEquipe,
+#ExperienceJeune .anExperienceJeune,
+#ExperienceJeune .anExperienceAncien,
+#ExperienceAncien .anExperienceEquipe,
+#ExperienceAncien .anExperienceJeune,
+#ExperienceAncien .anExperienceAncien {
+  background: white;
+  display: block;
+  margin-bottom: 25px;
+  position: relative;
+}
+#ExperienceEquipe .anExperienceEquipe:last-child,
+#ExperienceEquipe .anExperienceJeune:last-child,
+#ExperienceEquipe .anExperienceAncien:last-child,
+#ExperienceJeune .anExperienceEquipe:last-child,
+#ExperienceJeune .anExperienceJeune:last-child,
+#ExperienceJeune .anExperienceAncien:last-child,
+#ExperienceAncien .anExperienceEquipe:last-child,
+#ExperienceAncien .anExperienceJeune:last-child,
+#ExperienceAncien .anExperienceAncien:last-child {
+  margin-bottom: 0px;
+}
+#ExperienceEquipe .anExperienceEquipe >div>div:not(.image),
+#ExperienceEquipe .anExperienceJeune >div>div:not(.image),
+#ExperienceEquipe .anExperienceAncien >div>div:not(.image),
+#ExperienceJeune .anExperienceEquipe >div>div:not(.image),
+#ExperienceJeune .anExperienceJeune >div>div:not(.image),
+#ExperienceJeune .anExperienceAncien >div>div:not(.image),
+#ExperienceAncien .anExperienceEquipe >div>div:not(.image),
+#ExperienceAncien .anExperienceJeune >div>div:not(.image),
+#ExperienceAncien .anExperienceAncien >div>div:not(.image) {
+  min-height: 131px;
+  overflow: hidden;
+  padding-bottom: 25px;
+}
+#ExperienceEquipe .anExperienceEquipe .image,
+#ExperienceEquipe .anExperienceJeune .image,
+#ExperienceEquipe .anExperienceAncien .image,
+#ExperienceJeune .anExperienceEquipe .image,
+#ExperienceJeune .anExperienceJeune .image,
+#ExperienceJeune .anExperienceAncien .image,
+#ExperienceAncien .anExperienceEquipe .image,
+#ExperienceAncien .anExperienceJeune .image,
+#ExperienceAncien .anExperienceAncien .image {
+  padding-bottom: 16.666666666667%;
+  height: 1px;
+  background-position: center;
+  background-size: cover;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+#ExperienceEquipe .anExperienceEquipe h3,
+#ExperienceEquipe .anExperienceJeune h3,
+#ExperienceEquipe .anExperienceAncien h3,
+#ExperienceJeune .anExperienceEquipe h3,
+#ExperienceJeune .anExperienceJeune h3,
+#ExperienceJeune .anExperienceAncien h3,
+#ExperienceAncien .anExperienceEquipe h3,
+#ExperienceAncien .anExperienceJeune h3,
+#ExperienceAncien .anExperienceAncien h3 {
+  color: #a90000;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  margin-top: 10px;
+}
+#ExperienceEquipe .anExperienceEquipe p,
+#ExperienceEquipe .anExperienceJeune p,
+#ExperienceEquipe .anExperienceAncien p,
+#ExperienceJeune .anExperienceEquipe p,
+#ExperienceJeune .anExperienceJeune p,
+#ExperienceJeune .anExperienceAncien p,
+#ExperienceAncien .anExperienceEquipe p,
+#ExperienceAncien .anExperienceJeune p,
+#ExperienceAncien .anExperienceAncien p {
+  margin-top: 8px;
+  color: #676764;
+  height: 68px;
+  overflow: hidden;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+#ExperienceEquipe .anExperienceEquipe p.expandable,
+#ExperienceEquipe .anExperienceJeune p.expandable,
+#ExperienceEquipe .anExperienceAncien p.expandable,
+#ExperienceJeune .anExperienceEquipe p.expandable,
+#ExperienceJeune .anExperienceJeune p.expandable,
+#ExperienceJeune .anExperienceAncien p.expandable,
+#ExperienceAncien .anExperienceEquipe p.expandable,
+#ExperienceAncien .anExperienceJeune p.expandable,
+#ExperienceAncien .anExperienceAncien p.expandable {
+  height: 100%;
+}
+#ExperienceEquipe .anExperienceEquipe button,
+#ExperienceEquipe .anExperienceJeune button,
+#ExperienceEquipe .anExperienceAncien button,
+#ExperienceJeune .anExperienceEquipe button,
+#ExperienceJeune .anExperienceJeune button,
+#ExperienceJeune .anExperienceAncien button,
+#ExperienceAncien .anExperienceEquipe button,
+#ExperienceAncien .anExperienceJeune button,
+#ExperienceAncien .anExperienceAncien button {
+  position: absolute;
+  bottom: 0px;
+  background: none;
+  border: 0px;
+  color: #a90000;
+  font-size: 11px;
+  padding: 0;
+  margin: 0px;
+  left: 0px;
+  width: 100%;
+  margin-top: 0px;
+  display: block;
+  transition: all 0.3s;
+  padding: 5px 0px;
+  text-align: center;
+}
+#ExperienceEquipe .anExperienceEquipe button:hover,
+#ExperienceEquipe .anExperienceJeune button:hover,
+#ExperienceEquipe .anExperienceAncien button:hover,
+#ExperienceJeune .anExperienceEquipe button:hover,
+#ExperienceJeune .anExperienceJeune button:hover,
+#ExperienceJeune .anExperienceAncien button:hover,
+#ExperienceAncien .anExperienceEquipe button:hover,
+#ExperienceAncien .anExperienceJeune button:hover,
+#ExperienceAncien .anExperienceAncien button:hover {
+  color: white;
+  background: #676764;
+}
+#ExperienceEquipe .anExperienceEquipe button:focus,
+#ExperienceEquipe .anExperienceJeune button:focus,
+#ExperienceEquipe .anExperienceAncien button:focus,
+#ExperienceJeune .anExperienceEquipe button:focus,
+#ExperienceJeune .anExperienceJeune button:focus,
+#ExperienceJeune .anExperienceAncien button:focus,
+#ExperienceAncien .anExperienceEquipe button:focus,
+#ExperienceAncien .anExperienceJeune button:focus,
+#ExperienceAncien .anExperienceAncien button:focus {
+  outline: none;
+}
 #Calendar .ai1ec-calendar-toolbar,
 #Calendar #ai1ec-today,
 #Calendar #ai1ec-prev-year,
@@ -6594,6 +6814,7 @@ td.visible-print {
 #BackToTop {
   position: fixed;
   bottom: 10px;
+  cursor: pointer;
   right: 10px;
   display: block;
   width: 50px;
