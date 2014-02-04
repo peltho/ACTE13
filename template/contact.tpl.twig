@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-5 col-lg-offset-1">
                 <form>
-                    <input type="text" name="nomContact" id="TxtNom" placeholder="Votre nom et prénom"/>
+                    <input type="text" name="nomContact" id="TxtNom" placeholder="Votre prénom et nom"/>
                     <input type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
                     <input type="text" name="objetContact" id="TxtObjet" placeholder="Votre adresse mail"/>
                     <label>
@@ -67,7 +67,7 @@
                     <p>Acte 13</p>
                     <p>Adresse1</p>
                     <p>Adresse2</p>
-                    <p>code postale Ville</p>
+                    <p>Code postal Ville</p>
                     <p>numTel</p>
                     <p>numFax</p>
                     <a href="mail:" class="email">acte13[at]gmail.com</a>
@@ -83,13 +83,13 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script>
     function initialize() {
-        var lat= -25.363882;
-        var lng= 131.044922;
+        var lat = -25.363882;
+        var lng = 131.044922;
         var myLatlng = new google.maps.LatLng(lat,lng);
         var mapOptions = {
             zoom: 10,
             center: myLatlng
-        }
+        };
         var map = new google.maps.Map(document.getElementById('GoogleMap'), mapOptions);
 
         var marker = new google.maps.Marker({
@@ -97,8 +97,14 @@
             map: map,
             title: 'ACTE13'
         });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            var infowindow = new google.maps.InfoWindow({
+                content: marker.title
+            });
+            infowindow.open(marker.get('map'), marker);
+        });
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
-
 </script>
