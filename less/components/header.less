@@ -12,12 +12,13 @@
   }
   &.fixed{
     .mask{
-    opacity:0;
+    display:none;
     height:0px;
     }
     position:fixed;
     top:0;
-    z-index:100;
+    z-index:10;
+    transition:height 0.3s;
     width:100%;
     background:white;
     height:60px;

@@ -16,47 +16,6 @@
                     <input type="text" name="nomContact" id="TxtNom" placeholder="Votre prénom et nom"/>
                     <input type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
                     <input type="text" name="objetContact" id="TxtObjet" placeholder="Votre adresse mail"/>
-                    <label>
-                        <span>Type de Contact<small>selon les disponibilités</small></span>
-                        <select name="typeContact" id="SelType">
-                            <option value="0">Message</option>
-                            <option value="1">Prise de rendez-vous</option>
-                        </select>
-                    </label>
-                    <label>
-                        <span>Moyen désiré pour le rendez-vous :</span>
-                        <select name="moyenRDVContact" id="SelMoyenRDV">
-                            <option value="0">Entretien physique</option>
-                            <option value="1">Entretien téléphonique</option>
-                        </select>
-                    </label>
-                    <label>
-                        <span>Date désirée du rendez-vous :</span>
-                        <input type="date" name="dateRDVContact" id="TxtDateRDV" placeholder="jj/mm/aaaa"/>
-                    </label>
-                    <label>
-                        <span>Heure désirée du rendez-vous :</span>
-                        <select name="heureRDVContact" id="SelHeureRDV">
-                            {% for h in 9..19 %}
-                                {% for j in 0..1 %}
-                                    {% if j %}
-                                        {% set m="30" %}
-                                    {% else %}
-                                        {% set m="00" %}
-                                    {% endif %}
-                                    <option value="{{ h }}h{{ m }}">{{ h }}h{{ m }}</option>
-                                {% endfor %}
-                            {% endfor %}
-                        </select>
-                    </label>
-                    <label>
-                        <span>Rendez-vous avec :</span>
-                        <select name="quiRDVContact" id="SelQuiRDV">
-                            <option value="Patrick Maurel">Patrick Morel</option>
-                            <option value="Madame Y">Madame X</option>
-                            <option value="Monsieur Y">Monsieur Y</option>
-                        </select>
-                    </label>
                     <textarea name="messageContact" id="TxtMessageRDV">Votre message</textarea>
                     <button name="submitContact" id="BtnSubmitContact">Envoyer</button>
                 </form>

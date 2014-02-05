@@ -6,19 +6,24 @@ function isValidEmailAddress(email) {
 };
 
 $(document).ready(function(){
-    $('.carousel').flexslider({
+    $('#headerCarousel').flexslider({
         slideshow: true,
         controlNav: false,
         directionNav:false
     });
-    $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
-        var target = this.hash;
+    $('#ExperienceEquipeCarousel,#ExperienceJeuneCarousel,#ExperienceAncienCarousel').flexslider({
+        slideshow: true,
+        controlNav: true,
+        directionNav:true
+    });
+    $('#ExperienceExterneTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+    $('#BackToTop').on('click',function (e) {
         $('html, body').stop().animate({
-            'scrollTop': jQuery(target).offset().top
-        }, 900, 'swing', function () {
-            window.location.hash = target;
-        });
+            'scrollTop': 0
+        }, 900, 'swing');
     });
 
     //Menu responsive Jpanel
