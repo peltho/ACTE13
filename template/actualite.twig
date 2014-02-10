@@ -1,0 +1,13 @@
+<div class="row" id="Dispositifs-Missions">
+	<div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+		<article>
+			<h3>{{ toRender.actualite.post_title }}</h3>
+            <img src="{{ toRender.actualite.image }}"/>
+            <p class="posted"><small>postée le {{ toRender.actualite.post_date|date('d/m/Y') }}</small></p>
+            <div class="content">
+                <p>{{ toRender.actualite.post_content }}</p>
+            </div>
+        </article>
+	</div>
+</div>
+<hr style="border-top: 1px solid #676764; margin: 20px 30px 20px 30px;" />
