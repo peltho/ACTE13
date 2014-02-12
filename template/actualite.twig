@@ -1,13 +1,129 @@
-<div class="row" id="Dispositifs-Missions">
+
+<section class="row" id="SinglePost">
 	<div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-		<article>
-			<h3>{{ toRender.actualite.post_title }}</h3>
+		<article id="SinglePostContent">
+			<h1>{{ toRender.actualite.post_title }}</h1>
             <img src="{{ toRender.actualite.image }}"/>
-            <p class="posted"><small>postée le {{ toRender.actualite.post_date|date('d/m/Y') }}</small></p>
             <div class="content">
+                <p class="posted"><small>postée le {{ toRender.actualite.post_date|date('d/m/Y') }}</small></p>
                 <p>{{ toRender.actualite.post_content }}</p>
             </div>
+
         </article>
 	</div>
-</div>
-<hr style="border-top: 1px solid #676764; margin: 20px 30px 20px 30px;" />
+</section>
+<section id="Temoignage" >
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-lg-offset-6 col-md-offset-6">
+            <a  id="BtnWriteExperience" href="#WriteTemoignage">Rédiger votre témoignage</a>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="col-lg-5 col-md-5 col-lg-offset-1 col-md-offset-1">
+            Les témoignages :
+        </h2>
+    </div>
+    <div class="row">
+        <div id="TemoignageCarousel" class="carousel col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+            <ul class="slides">
+                <li class="col-lg-12 col-md-12">
+                    <div class="row anTemoignage">
+                        <div class="col-lg-12 col-md-12">
+                            <h3>Brice</h3>
+                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                            <button data-expandable="false">En savoir plus...</button>
+                        </div>
+                    </div>
+                    <div class="row anTemoignage">
+                        <div class="col-lg-12 col-md-12">
+                            <h3>Paul </h3>
+                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                            <button data-expandable="false">En savoir plus...</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-12 col-md-12">
+                    <div class="row anTemoignage">
+                        <div class="col-lg-12 col-md-12">
+                            <h3>Marc Robert</h3>
+                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                            <button data-expandable="false">En savoir plus...</button>
+                        </div>
+                    </div>
+                    <div class="row anTemoignage">
+                        <div class="col-lg-12 col-md-12">
+                            <h3>Jean Louis</h3>
+                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                            <button data-expandable="false">En savoir plus...</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <form id="WriteTemoignage" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+            <input class="col-lg-4 col-md-4 "type="text" id="TxtPseudoTemoignage" name="pseudoTemoignage" placeholder="Pseudo"/>
+            <textarea id="TxtMessageTemoignage" name="messageTemoignage" placeholder="Votre commentaire"></textarea>
+            <button name="submitTemoignage" id="BtnSubmitTemoignage">Partager</button>
+        </form>
+    </div>
+</section>
+<section id="OtherNews">
+    <div class="row">
+        <div class="col-lg-10 col-md-10 col-md-offset-1 col-lg-offset-1">
+            <h2>
+                <span>Liste des actualités</span>
+                <label id="NewsSortByYear">
+                    Trier par année
+                    <select id="SelSortYearNews" name="sortYearNews">
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011</option>
+                    </select>
+                </label>
+
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 col-md-10 col-md-offset-1 col-lg-offset-1">
+            <ul id="ListOtherNews" >
+                <li class="row">
+                    <div class="col-lg-5 col-md-5">
+                        <img src=""/>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <h3>Hello</h3>
+                        <p class="posted">Le {{ toRender.actualite.post_date|date('d/m/Y') }}</p>
+                        <p class="content">Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                        <a class="more">Lire la suite...</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="col-lg-5 col-md-5">
+                        <img src=""/>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <h3>Hello2</h3>
+                        <p class="posted">Le {{ toRender.actualite.post_date|date('d/m/Y') }}</p>
+                        <p class="content">Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                        <a class="more">Lire la suite...</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="col-lg-5 col-md-5">
+                        <img src=""/>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <h3>Hello3</h3>
+                        <p class="posted">Le {{ toRender.actualite.post_date|date('d/m/Y') }}</p>
+                        <p class="content">Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                        <a class="more">Lire la suite...</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

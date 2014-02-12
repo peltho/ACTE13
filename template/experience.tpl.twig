@@ -5,16 +5,20 @@
         </h1>
     </div>
     <div class="row">
-        <h2 class="col-lg-6 col-md-6">
+        <div class="col-lg-5 col-md-5 col-lg-offset-6 col-md-offset-6">
+            <a  id="BtnWriteExperience" href="#WriteExperience">Ecrire une expérience</a>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="col-lg-5 col-md-5 col-lg-offset-1 col-md-offset-1">
             Les expériences de l'équipe :
         </h2>
-        <a class="col-lg-6 col-md-6" href="#WriteExperience">Ecrire une expérience</a>
     </div>
     <div id="ExperienceEquipe" class="row">
         <div id="ExperienceEquipeCarousel" class="carousel col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-            <ul class="slides row">
-                <li class="row">
-                    <div class="row anExperienceEquipe">
+            <ul class="slides">
+                <li class="col-lg-12 col-md-12">
+                    <div class="row anExperience">
                         <div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
                         <div class="col-lg-10 col-md-10">
                             <h3>Brice</h3>
@@ -22,7 +26,7 @@
                             <button data-expandable="false">En savoir plus...</button>
                         </div>
                     </div>
-                    <div class="row anExperienceEquipe">
+                    <div class="row anExperience">
                         <div class="col-lg-10 col-md-10">
                             <h3>Paul </h3>
                             <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
@@ -31,8 +35,8 @@
                         <div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
                     </div>
                 </li>
-                <li class="row">
-                    <div class="row anExperienceEquipe">
+                <li class="col-lg-12 col-md-12">
+                    <div class="row anExperience">
                         <div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
                         <div class="col-lg-10 col-md-10">
                             <h3>Marc Robert</h3>
@@ -40,7 +44,7 @@
                             <button data-expandable="false">En savoir plus...</button>
                         </div>
                     </div>
-                    <div class="row anExperienceEquipe">
+                    <div class="row anExperience">
                         <div class="col-lg-10 col-md-10">
                             <h3>Jean Louis</h3>
                             <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
@@ -53,24 +57,24 @@
         </div>
     </div>
     <div class="row">
-        <ul id="ExperienceExterneTab" class="nav nav-tabs">
-            <li class="active"><h2><a href="#ExperienceJeune" data-toggle="tab">Les expériences des jeunes</a></h2></li>
-            <li><h2><a href="#ExperienceAncien" data-toggle="tab">Les expériences des anciens</a></h2></li>
+        <ul id="ExperienceExterneTab" class="nav nav-tabs col-lg-offset-1">
+            <li class="active actived"><h2><a href="#ExperienceJeune" data-toggle="tab">Les expériences des jeunes</a></h2></li>
+            <li ><h2><a href="#ExperienceAncien" data-toggle="tab">Les expériences des anciens</a></h2></li>
         </ul>
     </div>
     <div class="tab-content">
         <div id="ExperienceJeune" class="row tab-pane active">
             <div id="ExperienceJeuneCarousel" class="carousel col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-                <ul class="slides row">
-                    <li class="row">
-                        <div class="row anExperienceJeune">
+                <ul class="slides">
+                    <li class="col-lg-12 col-md-12">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Brice</h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
                                 <button data-expandable="false">En savoir plus...</button>
                             </div>
                         </div>
-                        <div class="row anExperienceJeune">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Paul </h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
@@ -78,15 +82,15 @@
                             </div>
                         </div>
                     </li>
-                    <li class="row">
-                        <div class="row anExperienceJeune">
+                    <li class="col-lg-12 col-md-12">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Marc Robert</h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
                                 <button data-expandable="false">En savoir plus...</button>
                             </div>
                         </div>
-                        <div class="row anExperienceJeune">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Jean Louis</h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
@@ -99,16 +103,16 @@
         </div>
         <div id="ExperienceAncien" class="row tab-pane">
             <div id="ExperienceAncienCarousel" class="carousel col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-                <ul class="slides row">
-                    <li class="row">
-                        <div class="row anExperienceAncien">
+                <ul class="slides">
+                    <li class="col-lg-12 col-md-12">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Brice</h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
                                 <button data-expandable="false">En savoir plus...</button>
                             </div>
                         </div>
-                        <div class="row anExperienceAncien">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Paul </h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
@@ -116,15 +120,15 @@
                             </div>
                         </div>
                     </li>
-                    <li class="row">
-                        <div class="row anExperienceAncien">
+                    <li class="col-lg-12 col-md-12">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Marc Robert</h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
                                 <button data-expandable="false">En savoir plus...</button>
                             </div>
                         </div>
-                        <div class="row anExperienceAncien">
+                        <div class="row anExperience">
                             <div class="col-lg-12 col-md-12">
                                 <h3>Jean Louis</h3>
                                 <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
@@ -137,15 +141,15 @@
         </div>
     </div>
     <div class="row">
-        <h2 class="col-lg-12 col-md-12">
+        <h2 class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
             Partage ton expérience avec ACTE13 :
         </h2>
     </div>
     <div class="row">
-        <form class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-            <input type="text" id="TxtPseudoExperience" name="pseudoExperience" placeholder="Pseudo"/>
+        <form id="WriteExperience" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+            <input class="col-lg-4 col-md-4 "type="text" id="TxtPseudoExperience" name="pseudoExperience" placeholder="Pseudo"/>
             <textarea id="TxtMessageExperience" name="messageExperience" placeholder="Votre expérience"></textarea>
-            <button name="submitContact" id="BtnSubmitContact">Partager</button>
+            <button name="submitExperience" id="BtnSubmitExperience">Partager</button>
         </form>
     </div>
 </section>

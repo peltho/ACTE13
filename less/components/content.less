@@ -19,7 +19,11 @@
     margin-left:20px;
     margin-top:10px;
     margin-bottom:40px;
-
+  }
+  h2{
+    font-size:20px;
+    margin-top:15px;
+    line-height: 34px;
   }
 }
 
@@ -178,8 +182,6 @@
       }
     }
     button{
-      position:absolute;
-      bottom:0px;
       background:none;
       border:0px;
       color:@blue;
@@ -339,17 +341,46 @@
   }
 }
 
-#ExperienceEquipe,#ExperienceJeune,#ExperienceAncien{
+#ExperienceEquipe,#ExperienceJeune,#ExperienceAncien,#Temoignage{
   ul{
     list-style: none;
-    padding-left:30px;
+    padding:0px;
     margin-bottom: 0px;
   }
   .carousel{
     position:relative;
+    .slides{
+      &:after{
+        clear:both;
+        content:" ";
+        display:block;
+      }
+    }
     .flex-control-nav{
-      position:absolute;
-      bottom:-12px;
+      display:block;
+      margin-top:5px;
+      margin-bottom:0px;
+      list-style: none;
+      padding:0px;
+      text-align: center;
+      >li{
+        display:inline-block;
+        margin-right:3px;
+        >a{
+          cursor:pointer;
+          width:16px;
+          height:16px;
+          text-indent:-9999px;
+          display:block;
+          transition: background-image 0.3s;
+          background-image: url(../images/ico-pointGray.png);
+          &.flex-active{
+            background-image: url(../images/ico-pointRed.png);
+          }
+        }
+
+      }
+
     }
     .flex-direction-nav{
       position:absolute;
@@ -357,6 +388,7 @@
       height:0px;
       padding:0px;
       margin:0px;
+      margin-top:-10px;
       top:50%;
       >li{
         width:100%;
@@ -377,25 +409,26 @@
         .flex-prev{
           background-image:url(../images/ico-arrowLeftGray.png);
           background-position: center left;
-          left:-60px;
+          left:-5%;
           &:hover{
             width:44px;
-            left:-82px;
+            left:-7%;
           }
         }
         .flex-next{
           background-image:url(../images/ico-arrowRightGray.png);
           background-position: center right;
-          right:-30px;
+          right:-5%;
+          margin-right:30px;
           &:hover{
             width:44px;
-            right:-52px;
+            right:-7%;
           }
         }
       }
     }
   }
-  .anExperienceEquipe,.anExperienceJeune,.anExperienceAncien{
+  .anExperience,.anTemoignage{
     background:white;
     display:block;
     margin-bottom:25px;
@@ -435,7 +468,6 @@
       }
     }
     button{
-      position:absolute;
       bottom:0px;
       background:none;
       border:0px;
@@ -458,5 +490,238 @@
         outline:none;
       }
     }
+  }
+}
+
+#BtnWriteExperience{
+  background:@blue;
+  float:right;
+  margin-left:15px;
+  display:block;
+  padding:7px 20px;
+  color: white;
+  font-weight:300;
+  transition:background 0.3s;
+  &:hover{
+    background:@darkGray;
+    text-decoration:none;
+  }
+}
+
+#ExperienceExterneTab{
+  margin-top:40px;
+  border:0px;
+  padding-left:15px;
+  >li{
+    &:first-child{
+    }
+    >h2{
+      transition:background 0.3s;
+      background: @darkGray;
+      text-align:center;
+      font-weight:300;
+      padding:0px;
+      margin:0px;
+      font-size:16px;
+      >a{
+        width:100%;
+        padding:5px 15px;
+        color:white;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+    &.actived{
+      >h2{
+        background:@blue;
+
+      }
+    }
+  }
+}
+#SinglePostContent{
+  text-align:center;
+  >h1{
+    color:@blue;
+    margin:0px;
+    font-weight:500;
+    padding:0px;
+    font-size:2.2rem;
+    margin-bottom:15px;
+    margin-top:20px;
+  }
+    >img{
+      width:100%;
+      position:relative;
+      height:200px;
+    }
+    >.content{
+      text-align: justify;
+      min-height:300px;
+      background:@white;
+      position:relative;
+      padding:10px 10px 4px 10px;
+      &:before{
+        transition:all 0.5s;
+        content:" ";
+        width:16px;
+        height:16px;
+        background:url(../images/ico-rond.png);
+        top:-8px;
+        left:-8px;
+        position:absolute;
+      }
+      >h2{
+        color:@blue;
+        margin:0px;
+        font-weight:500;
+        padding:0px;
+        font-size:1.8rem;
+        margin-bottom:8px;
+      }
+      >p{
+        font-size:1.2rem;
+        color:@darkGray;
+      }
+      >a{
+        display:block;
+        text-decoration:underline;
+        text-align:center;
+        font-size:1rem;
+        color:@blue;
+        &:hover{
+          text-decoration:none;
+        }
+      }
+    }
+  }
+
+
+#Experience,#Temoignage{
+  input{
+    display:block;
+    color:@darkGray;
+    overflow:hidden;
+    font-size:12px;
+    text-indent:7px;
+    padding:7px 0px;
+    margin-bottom:15px;
+    border:1px solid @darkGray;
+    +input{
+      margin-top:15px;
+    }
+    &:focus{
+      outline:none;
+    }
+  }
+  textarea{
+    display:block;
+    color:@darkGray;
+    font-size:12px;
+    max-width:100%;
+    width:100%;
+    margin-top:15px;
+    min-width:100%;
+    height:150px;
+    max-height:250px;
+    border:1px solid @darkGray;
+    padding:7px;
+    &:focus{
+      outline:none;
+    }
+  }
+
+  button{
+    background: @blue;
+    color:white;
+    border:0px;
+    padding:5px 20px;
+    font-size:16px;
+    font-weight:300;
+    margin-top:15px;
+    transition: all 0.3s;
+    float:right;
+    &:focus{
+      outline:none;
+    }
+    &:hover{
+      background:@darkGray;
+    }
+  }
+}
+
+#Temoignage{
+  border-top: 1px solid @blue;
+  padding-top:15px;
+  margin-top:15px;
+}
+
+#OtherNews{
+  border-top: 1px solid @blue;
+  padding-top:15px;
+  margin-top:15px;
+
+  h2{
+    background:@darkGray;
+    padding:7px 7px;
+    font-size:1.6rem;
+    margin-bottom:0px;
+    color:white;
+    #NewsSortByYear{
+      float:right;
+      font-size:1rem;
+      font-weight:500;
+      select{
+        font-size:1.6rem;
+        border:0px;
+      }
+    }
+  }
+}
+
+#ListOtherNews{
+  background:white;
+  list-style: none;
+  padding:0;
+  border:1px solid @darkGray;
+  >li{
+    margin:0px;
+    border-top:1px solid @darkGray;
+    &:first-child{
+      border-top:0px;
+    }
+    >div{
+        padding:15px;
+    }
+    img{
+      width:100%;
+      height:170px;
+    }
+    h3{
+      color:@blue;
+      margin:0px;
+      font-weight:bold;
+      font-size:1.6rem;
+    }
+    .content{
+      text-align: justify;
+      font-size:1.2rem;
+    }
+    .posted{
+      margin-top:5px;
+      font-size:1.4rem;
+    }
+    .more{
+      display:block;
+      text-align:center;
+      color:@blue;
+      font-size:1.2rem;
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    min-height:200px;
   }
 }

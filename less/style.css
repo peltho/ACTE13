@@ -5899,6 +5899,18 @@ td.visible-print {
 #MainNavigation >li >a:hover {
   text-decoration: none;
 }
+#ButtonMenu {
+  width: 40px !important;
+  margin: 0px;
+  height: 40px;
+  float: right;
+  margin: 10px;
+  margin-left: 0px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-image: url(../images/ico-menu.png);
+  background-position: center;
+}
 #jPanelMenu-menu {
   display: none !important;
   background-color: white;
@@ -5907,6 +5919,7 @@ td.visible-print {
   padding: 0;
   list-style: none;
   overflow-y: hidden !important;
+  border-left: 1px solid #eeeeee;
 }
 #jPanelMenu-menu .sub-menu {
   max-height: 0px;
@@ -6021,6 +6034,11 @@ td.visible-print {
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 40px;
+}
+#Content h2 {
+  font-size: 20px;
+  margin-top: 15px;
+  line-height: 34px;
 }
 #Description {
   color: #676764;
@@ -6163,8 +6181,6 @@ td.visible-print {
   height: 100%;
 }
 #Dispositifs-Missions >li button {
-  position: absolute;
-  bottom: 0px;
   background: none;
   border: 0px;
   color: #a90000;
@@ -6313,41 +6329,85 @@ td.visible-print {
 }
 #ExperienceEquipe ul,
 #ExperienceJeune ul,
-#ExperienceAncien ul {
+#ExperienceAncien ul,
+#Temoignage ul {
   list-style: none;
-  padding-left: 30px;
+  padding: 0px;
   margin-bottom: 0px;
 }
 #ExperienceEquipe .carousel,
 #ExperienceJeune .carousel,
-#ExperienceAncien .carousel {
+#ExperienceAncien .carousel,
+#Temoignage .carousel {
   position: relative;
+}
+#ExperienceEquipe .carousel .slides:after,
+#ExperienceJeune .carousel .slides:after,
+#ExperienceAncien .carousel .slides:after,
+#Temoignage .carousel .slides:after {
+  clear: both;
+  content: " ";
+  display: block;
 }
 #ExperienceEquipe .carousel .flex-control-nav,
 #ExperienceJeune .carousel .flex-control-nav,
-#ExperienceAncien .carousel .flex-control-nav {
-  position: absolute;
-  bottom: -12px;
+#ExperienceAncien .carousel .flex-control-nav,
+#Temoignage .carousel .flex-control-nav {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  list-style: none;
+  padding: 0px;
+  text-align: center;
+}
+#ExperienceEquipe .carousel .flex-control-nav >li,
+#ExperienceJeune .carousel .flex-control-nav >li,
+#ExperienceAncien .carousel .flex-control-nav >li,
+#Temoignage .carousel .flex-control-nav >li {
+  display: inline-block;
+  margin-right: 3px;
+}
+#ExperienceEquipe .carousel .flex-control-nav >li >a,
+#ExperienceJeune .carousel .flex-control-nav >li >a,
+#ExperienceAncien .carousel .flex-control-nav >li >a,
+#Temoignage .carousel .flex-control-nav >li >a {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  text-indent: -9999px;
+  display: block;
+  transition: background-image 0.3s;
+  background-image: url(../images/ico-pointGray.png);
+}
+#ExperienceEquipe .carousel .flex-control-nav >li >a.flex-active,
+#ExperienceJeune .carousel .flex-control-nav >li >a.flex-active,
+#ExperienceAncien .carousel .flex-control-nav >li >a.flex-active,
+#Temoignage .carousel .flex-control-nav >li >a.flex-active {
+  background-image: url(../images/ico-pointRed.png);
 }
 #ExperienceEquipe .carousel .flex-direction-nav,
 #ExperienceJeune .carousel .flex-direction-nav,
-#ExperienceAncien .carousel .flex-direction-nav {
+#ExperienceAncien .carousel .flex-direction-nav,
+#Temoignage .carousel .flex-direction-nav {
   position: absolute;
   width: 100%;
   height: 0px;
   padding: 0px;
   margin: 0px;
+  margin-top: -10px;
   top: 50%;
 }
 #ExperienceEquipe .carousel .flex-direction-nav >li,
 #ExperienceJeune .carousel .flex-direction-nav >li,
-#ExperienceAncien .carousel .flex-direction-nav >li {
+#ExperienceAncien .carousel .flex-direction-nav >li,
+#Temoignage .carousel .flex-direction-nav >li {
   width: 100%;
   position: relative;
 }
 #ExperienceEquipe .carousel .flex-direction-nav >li >a,
 #ExperienceJeune .carousel .flex-direction-nav >li >a,
-#ExperienceAncien .carousel .flex-direction-nav >li >a {
+#ExperienceAncien .carousel .flex-direction-nav >li >a,
+#Temoignage .carousel .flex-direction-nav >li >a {
   position: absolute;
   padding: 0;
   margin: 0;
@@ -6362,77 +6422,78 @@ td.visible-print {
 }
 #ExperienceEquipe .carousel .flex-direction-nav >li .flex-prev,
 #ExperienceJeune .carousel .flex-direction-nav >li .flex-prev,
-#ExperienceAncien .carousel .flex-direction-nav >li .flex-prev {
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-prev,
+#Temoignage .carousel .flex-direction-nav >li .flex-prev {
   background-image: url(../images/ico-arrowLeftGray.png);
   background-position: center left;
-  left: -60px;
+  left: -5%;
 }
 #ExperienceEquipe .carousel .flex-direction-nav >li .flex-prev:hover,
 #ExperienceJeune .carousel .flex-direction-nav >li .flex-prev:hover,
-#ExperienceAncien .carousel .flex-direction-nav >li .flex-prev:hover {
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-prev:hover,
+#Temoignage .carousel .flex-direction-nav >li .flex-prev:hover {
   width: 44px;
-  left: -82px;
+  left: -7%;
 }
 #ExperienceEquipe .carousel .flex-direction-nav >li .flex-next,
 #ExperienceJeune .carousel .flex-direction-nav >li .flex-next,
-#ExperienceAncien .carousel .flex-direction-nav >li .flex-next {
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-next,
+#Temoignage .carousel .flex-direction-nav >li .flex-next {
   background-image: url(../images/ico-arrowRightGray.png);
   background-position: center right;
-  right: -30px;
+  right: -5%;
+  margin-right: 30px;
 }
 #ExperienceEquipe .carousel .flex-direction-nav >li .flex-next:hover,
 #ExperienceJeune .carousel .flex-direction-nav >li .flex-next:hover,
-#ExperienceAncien .carousel .flex-direction-nav >li .flex-next:hover {
+#ExperienceAncien .carousel .flex-direction-nav >li .flex-next:hover,
+#Temoignage .carousel .flex-direction-nav >li .flex-next:hover {
   width: 44px;
-  right: -52px;
+  right: -7%;
 }
-#ExperienceEquipe .anExperienceEquipe,
-#ExperienceEquipe .anExperienceJeune,
-#ExperienceEquipe .anExperienceAncien,
-#ExperienceJeune .anExperienceEquipe,
-#ExperienceJeune .anExperienceJeune,
-#ExperienceJeune .anExperienceAncien,
-#ExperienceAncien .anExperienceEquipe,
-#ExperienceAncien .anExperienceJeune,
-#ExperienceAncien .anExperienceAncien {
+#ExperienceEquipe .anExperience,
+#ExperienceEquipe .anTemoignage,
+#ExperienceJeune .anExperience,
+#ExperienceJeune .anTemoignage,
+#ExperienceAncien .anExperience,
+#ExperienceAncien .anTemoignage,
+#Temoignage .anExperience,
+#Temoignage .anTemoignage {
   background: white;
   display: block;
   margin-bottom: 25px;
   position: relative;
 }
-#ExperienceEquipe .anExperienceEquipe:last-child,
-#ExperienceEquipe .anExperienceJeune:last-child,
-#ExperienceEquipe .anExperienceAncien:last-child,
-#ExperienceJeune .anExperienceEquipe:last-child,
-#ExperienceJeune .anExperienceJeune:last-child,
-#ExperienceJeune .anExperienceAncien:last-child,
-#ExperienceAncien .anExperienceEquipe:last-child,
-#ExperienceAncien .anExperienceJeune:last-child,
-#ExperienceAncien .anExperienceAncien:last-child {
+#ExperienceEquipe .anExperience:last-child,
+#ExperienceEquipe .anTemoignage:last-child,
+#ExperienceJeune .anExperience:last-child,
+#ExperienceJeune .anTemoignage:last-child,
+#ExperienceAncien .anExperience:last-child,
+#ExperienceAncien .anTemoignage:last-child,
+#Temoignage .anExperience:last-child,
+#Temoignage .anTemoignage:last-child {
   margin-bottom: 0px;
 }
-#ExperienceEquipe .anExperienceEquipe >div>div:not(.image),
-#ExperienceEquipe .anExperienceJeune >div>div:not(.image),
-#ExperienceEquipe .anExperienceAncien >div>div:not(.image),
-#ExperienceJeune .anExperienceEquipe >div>div:not(.image),
-#ExperienceJeune .anExperienceJeune >div>div:not(.image),
-#ExperienceJeune .anExperienceAncien >div>div:not(.image),
-#ExperienceAncien .anExperienceEquipe >div>div:not(.image),
-#ExperienceAncien .anExperienceJeune >div>div:not(.image),
-#ExperienceAncien .anExperienceAncien >div>div:not(.image) {
+#ExperienceEquipe .anExperience >div>div:not(.image),
+#ExperienceEquipe .anTemoignage >div>div:not(.image),
+#ExperienceJeune .anExperience >div>div:not(.image),
+#ExperienceJeune .anTemoignage >div>div:not(.image),
+#ExperienceAncien .anExperience >div>div:not(.image),
+#ExperienceAncien .anTemoignage >div>div:not(.image),
+#Temoignage .anExperience >div>div:not(.image),
+#Temoignage .anTemoignage >div>div:not(.image) {
   min-height: 131px;
   overflow: hidden;
   padding-bottom: 25px;
 }
-#ExperienceEquipe .anExperienceEquipe .image,
-#ExperienceEquipe .anExperienceJeune .image,
-#ExperienceEquipe .anExperienceAncien .image,
-#ExperienceJeune .anExperienceEquipe .image,
-#ExperienceJeune .anExperienceJeune .image,
-#ExperienceJeune .anExperienceAncien .image,
-#ExperienceAncien .anExperienceEquipe .image,
-#ExperienceAncien .anExperienceJeune .image,
-#ExperienceAncien .anExperienceAncien .image {
+#ExperienceEquipe .anExperience .image,
+#ExperienceEquipe .anTemoignage .image,
+#ExperienceJeune .anExperience .image,
+#ExperienceJeune .anTemoignage .image,
+#ExperienceAncien .anExperience .image,
+#ExperienceAncien .anTemoignage .image,
+#Temoignage .anExperience .image,
+#Temoignage .anTemoignage .image {
   padding-bottom: 16.666666666667%;
   height: 1px;
   background-position: center;
@@ -6440,30 +6501,28 @@ td.visible-print {
   text-indent: -9999px;
   overflow: hidden;
 }
-#ExperienceEquipe .anExperienceEquipe h3,
-#ExperienceEquipe .anExperienceJeune h3,
-#ExperienceEquipe .anExperienceAncien h3,
-#ExperienceJeune .anExperienceEquipe h3,
-#ExperienceJeune .anExperienceJeune h3,
-#ExperienceJeune .anExperienceAncien h3,
-#ExperienceAncien .anExperienceEquipe h3,
-#ExperienceAncien .anExperienceJeune h3,
-#ExperienceAncien .anExperienceAncien h3 {
+#ExperienceEquipe .anExperience h3,
+#ExperienceEquipe .anTemoignage h3,
+#ExperienceJeune .anExperience h3,
+#ExperienceJeune .anTemoignage h3,
+#ExperienceAncien .anExperience h3,
+#ExperienceAncien .anTemoignage h3,
+#Temoignage .anExperience h3,
+#Temoignage .anTemoignage h3 {
   color: #a90000;
   font-weight: 500;
   font-size: 18px;
   margin: 0;
   margin-top: 10px;
 }
-#ExperienceEquipe .anExperienceEquipe p,
-#ExperienceEquipe .anExperienceJeune p,
-#ExperienceEquipe .anExperienceAncien p,
-#ExperienceJeune .anExperienceEquipe p,
-#ExperienceJeune .anExperienceJeune p,
-#ExperienceJeune .anExperienceAncien p,
-#ExperienceAncien .anExperienceEquipe p,
-#ExperienceAncien .anExperienceJeune p,
-#ExperienceAncien .anExperienceAncien p {
+#ExperienceEquipe .anExperience p,
+#ExperienceEquipe .anTemoignage p,
+#ExperienceJeune .anExperience p,
+#ExperienceJeune .anTemoignage p,
+#ExperienceAncien .anExperience p,
+#ExperienceAncien .anTemoignage p,
+#Temoignage .anExperience p,
+#Temoignage .anTemoignage p {
   margin-top: 8px;
   color: #676764;
   height: 68px;
@@ -6471,27 +6530,24 @@ td.visible-print {
   font-size: 12px;
   margin-bottom: 0px;
 }
-#ExperienceEquipe .anExperienceEquipe p.expandable,
-#ExperienceEquipe .anExperienceJeune p.expandable,
-#ExperienceEquipe .anExperienceAncien p.expandable,
-#ExperienceJeune .anExperienceEquipe p.expandable,
-#ExperienceJeune .anExperienceJeune p.expandable,
-#ExperienceJeune .anExperienceAncien p.expandable,
-#ExperienceAncien .anExperienceEquipe p.expandable,
-#ExperienceAncien .anExperienceJeune p.expandable,
-#ExperienceAncien .anExperienceAncien p.expandable {
+#ExperienceEquipe .anExperience p.expandable,
+#ExperienceEquipe .anTemoignage p.expandable,
+#ExperienceJeune .anExperience p.expandable,
+#ExperienceJeune .anTemoignage p.expandable,
+#ExperienceAncien .anExperience p.expandable,
+#ExperienceAncien .anTemoignage p.expandable,
+#Temoignage .anExperience p.expandable,
+#Temoignage .anTemoignage p.expandable {
   height: 100%;
 }
-#ExperienceEquipe .anExperienceEquipe button,
-#ExperienceEquipe .anExperienceJeune button,
-#ExperienceEquipe .anExperienceAncien button,
-#ExperienceJeune .anExperienceEquipe button,
-#ExperienceJeune .anExperienceJeune button,
-#ExperienceJeune .anExperienceAncien button,
-#ExperienceAncien .anExperienceEquipe button,
-#ExperienceAncien .anExperienceJeune button,
-#ExperienceAncien .anExperienceAncien button {
-  position: absolute;
+#ExperienceEquipe .anExperience button,
+#ExperienceEquipe .anTemoignage button,
+#ExperienceJeune .anExperience button,
+#ExperienceJeune .anTemoignage button,
+#ExperienceAncien .anExperience button,
+#ExperienceAncien .anTemoignage button,
+#Temoignage .anExperience button,
+#Temoignage .anTemoignage button {
   bottom: 0px;
   background: none;
   border: 0px;
@@ -6507,28 +6563,249 @@ td.visible-print {
   padding: 5px 0px;
   text-align: center;
 }
-#ExperienceEquipe .anExperienceEquipe button:hover,
-#ExperienceEquipe .anExperienceJeune button:hover,
-#ExperienceEquipe .anExperienceAncien button:hover,
-#ExperienceJeune .anExperienceEquipe button:hover,
-#ExperienceJeune .anExperienceJeune button:hover,
-#ExperienceJeune .anExperienceAncien button:hover,
-#ExperienceAncien .anExperienceEquipe button:hover,
-#ExperienceAncien .anExperienceJeune button:hover,
-#ExperienceAncien .anExperienceAncien button:hover {
+#ExperienceEquipe .anExperience button:hover,
+#ExperienceEquipe .anTemoignage button:hover,
+#ExperienceJeune .anExperience button:hover,
+#ExperienceJeune .anTemoignage button:hover,
+#ExperienceAncien .anExperience button:hover,
+#ExperienceAncien .anTemoignage button:hover,
+#Temoignage .anExperience button:hover,
+#Temoignage .anTemoignage button:hover {
   color: white;
   background: #676764;
 }
-#ExperienceEquipe .anExperienceEquipe button:focus,
-#ExperienceEquipe .anExperienceJeune button:focus,
-#ExperienceEquipe .anExperienceAncien button:focus,
-#ExperienceJeune .anExperienceEquipe button:focus,
-#ExperienceJeune .anExperienceJeune button:focus,
-#ExperienceJeune .anExperienceAncien button:focus,
-#ExperienceAncien .anExperienceEquipe button:focus,
-#ExperienceAncien .anExperienceJeune button:focus,
-#ExperienceAncien .anExperienceAncien button:focus {
+#ExperienceEquipe .anExperience button:focus,
+#ExperienceEquipe .anTemoignage button:focus,
+#ExperienceJeune .anExperience button:focus,
+#ExperienceJeune .anTemoignage button:focus,
+#ExperienceAncien .anExperience button:focus,
+#ExperienceAncien .anTemoignage button:focus,
+#Temoignage .anExperience button:focus,
+#Temoignage .anTemoignage button:focus {
   outline: none;
+}
+#BtnWriteExperience {
+  background: #a90000;
+  float: right;
+  margin-left: 15px;
+  display: block;
+  padding: 7px 20px;
+  color: white;
+  font-weight: 300;
+  transition: background 0.3s;
+}
+#BtnWriteExperience:hover {
+  background: #676764;
+  text-decoration: none;
+}
+#ExperienceExterneTab {
+  margin-top: 40px;
+  border: 0px;
+  padding-left: 15px;
+}
+#ExperienceExterneTab >li >h2 {
+  transition: background 0.3s;
+  background: #676764;
+  text-align: center;
+  font-weight: 300;
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+}
+#ExperienceExterneTab >li >h2 >a {
+  width: 100%;
+  padding: 5px 15px;
+  color: white;
+}
+#ExperienceExterneTab >li >h2 >a:hover {
+  text-decoration: none;
+}
+#ExperienceExterneTab >li.actived >h2 {
+  background: #a90000;
+}
+#SinglePostContent {
+  text-align: center;
+}
+#SinglePostContent >h1 {
+  color: #a90000;
+  margin: 0px;
+  font-weight: 500;
+  padding: 0px;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+#SinglePostContent >img {
+  width: 100%;
+  position: relative;
+  height: 200px;
+}
+#SinglePostContent >.content {
+  text-align: justify;
+  min-height: 300px;
+  background: #fff;
+  position: relative;
+  padding: 10px 10px 4px 10px;
+}
+#SinglePostContent >.content:before {
+  transition: all 0.5s;
+  content: " ";
+  width: 16px;
+  height: 16px;
+  background: url(../images/ico-rond.png);
+  top: -8px;
+  left: -8px;
+  position: absolute;
+}
+#SinglePostContent >.content >h2 {
+  color: #a90000;
+  margin: 0px;
+  font-weight: 500;
+  padding: 0px;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+#SinglePostContent >.content >p {
+  font-size: 1.2rem;
+  color: #676764;
+}
+#SinglePostContent >.content >a {
+  display: block;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 1rem;
+  color: #a90000;
+}
+#SinglePostContent >.content >a:hover {
+  text-decoration: none;
+}
+#Experience input,
+#Temoignage input {
+  display: block;
+  color: #676764;
+  overflow: hidden;
+  font-size: 12px;
+  text-indent: 7px;
+  padding: 7px 0px;
+  margin-bottom: 15px;
+  border: 1px solid #676764;
+}
+#Experience input +input,
+#Temoignage input +input {
+  margin-top: 15px;
+}
+#Experience input:focus,
+#Temoignage input:focus {
+  outline: none;
+}
+#Experience textarea,
+#Temoignage textarea {
+  display: block;
+  color: #676764;
+  font-size: 12px;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 15px;
+  min-width: 100%;
+  height: 150px;
+  max-height: 250px;
+  border: 1px solid #676764;
+  padding: 7px;
+}
+#Experience textarea:focus,
+#Temoignage textarea:focus {
+  outline: none;
+}
+#Experience button,
+#Temoignage button {
+  background: #a90000;
+  color: white;
+  border: 0px;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 15px;
+  transition: all 0.3s;
+  float: right;
+}
+#Experience button:focus,
+#Temoignage button:focus {
+  outline: none;
+}
+#Experience button:hover,
+#Temoignage button:hover {
+  background: #676764;
+}
+#Temoignage {
+  border-top: 1px solid #a90000;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+#OtherNews {
+  border-top: 1px solid #a90000;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+#OtherNews h2 {
+  background: #676764;
+  padding: 7px 7px;
+  font-size: 1.6rem;
+  margin-bottom: 0px;
+  color: white;
+}
+#OtherNews h2 #NewsSortByYear {
+  float: right;
+  font-size: 1rem;
+  font-weight: 500;
+}
+#OtherNews h2 #NewsSortByYear select {
+  font-size: 1.6rem;
+  border: 0px;
+}
+#ListOtherNews {
+  background: white;
+  list-style: none;
+  padding: 0;
+  border: 1px solid #676764;
+}
+#ListOtherNews >li {
+  margin: 0px;
+  border-top: 1px solid #676764;
+  min-height: 200px;
+}
+#ListOtherNews >li:first-child {
+  border-top: 0px;
+}
+#ListOtherNews >li >div {
+  padding: 15px;
+}
+#ListOtherNews >li img {
+  width: 100%;
+  height: 170px;
+}
+#ListOtherNews >li h3 {
+  color: #a90000;
+  margin: 0px;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+#ListOtherNews >li .content {
+  text-align: justify;
+  font-size: 1.2rem;
+}
+#ListOtherNews >li .posted {
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+#ListOtherNews >li .more {
+  display: block;
+  text-align: center;
+  color: #a90000;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+#ListOtherNews >li .more:hover {
+  text-decoration: none;
 }
 #Calendar .ai1ec-calendar-toolbar,
 #Calendar #ai1ec-today,
@@ -6872,6 +7149,61 @@ td.visible-print {
 @media (max-width: 991px) {
   #MainNavigation {
     display: none;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    padding-top: 50px;
+  }
+  #BackToTop {
+    width: 100% !important;
+    position: static !important;
+  }
+  #Experience .anExperience p {
+    height: auto;
+  }
+  #Header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    transition: height 0.3s;
+    width: 100%;
+    background: white;
+    height: 60px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  }
+  #Header .mask {
+    display: none;
+    height: 0px;
+  }
+  #Header #headerCarousel {
+    display: none;
+  }
+  #Header #LogoContainer {
+    margin-top: 0px;
+  }
+  #Header #LogoContainer >.row {
+    position: absolute;
+    top: 0;
+    width: 83.333333333333%;
+  }
+  #Header #LogoContainer #MainNavigationContainer {
+    width: 87%;
+  }
+  #Header #LogoContainer #MainNavigation {
+    margin-top: 0;
+  }
+  #Header #LogoContainer #MainNavigation >li>a {
+    padding: 15px 0px;
+    height: 60px;
+  }
+  #Header #LogoContainer #NomAssociation {
+    display: none;
+  }
+  #Header #LogoContainer #Logo {
+    height: 50px;
+    width: auto;
+    margin-top: 5px;
   }
 }
 * {
