@@ -8,7 +8,6 @@
 get_header();
 $toRender['template_directory'] = get_template_directory_uri();
 $toRender['title'] = get_the_title();
-$calendrier = do_shortcode('[ai1ec view="monthly"]');
 
 $query = new WP_Query();
 $articles = $query->query(array('post_type' => 'post', 'posts_per_page' => 4, 'orderBy' => 'date', 'order' => 'DESC'));
@@ -17,6 +16,12 @@ foreach($articles as $a) {
     $a->permalink = get_permalink($a->ID);
 }
 
+$calendrier = do_shortcode('[ai1ec view="monthly"]');
+$lienActualites = get_permalink(get_page_by_title('Actualités'));
+
 $twig = initTwig('');
-echo $twig->render('home.tpl.twig', array('render'=>$toRender, 'articles' => $articles, 'calendrier' => $calendrier));
+echo $twig->render('home.tpl.twig', array('render'     => $toRender,
+										  'articles'   => $articles,
+										  'calendrier' => $calendrier,
+										  'actualites' => $lienActualites));
 get_footer();
