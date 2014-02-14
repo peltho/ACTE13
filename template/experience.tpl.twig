@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-lg-5 col-md-5 col-lg-offset-6 col-md-offset-6">
-            <a  id="BtnWriteExperience" href="#WriteExperience">Ecrire une expérience</a>
+            <a id="BtnWriteExperience" href="#WriteExperience">Ecrire une expérience</a>
         </div>
     </div>
     <div class="row">
@@ -17,42 +17,47 @@
     <div id="ExperienceEquipe" class="row">
         <div id="ExperienceEquipeCarousel" class="carousel col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
             <ul class="slides">
+                {% for temoignage in toRender.comments %}
+                {% if loop.index0 % 2 == 0 %}
+                    {% if loop.index0 != 0 %}</li>{% endif %}
                 <li class="col-lg-12 col-md-12">
+                {% endif %}
                     <div class="row anExperience">
                         <div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
                         <div class="col-lg-10 col-md-10">
-                            <h3>Brice</h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                            <h3>{{ temoignage.comment_author }}</h3>
+                            <p>{{ temoignage.comment_content }}</p>
                             <button data-expandable="false">En savoir plus...</button>
                         </div>
                     </div>
-                    <div class="row anExperience">
-                        <div class="col-lg-10 col-md-10">
-                            <h3>Paul </h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                            <button data-expandable="false">En savoir plus...</button>
-                        </div>
-                        <div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
-                    </div>
+                    {#<div class="row anExperience">#}
+                        {#<div class="col-lg-10 col-md-10">#}
+                            {#<h3>Paul </h3>#}
+                            {#<p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>#}
+                            {#<button data-expandable="false">En savoir plus...</button>#}
+                        {#</div>#}
+                        {#<div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>#}
+                    {#</div>#}
                 </li>
-                <li class="col-lg-12 col-md-12">
-                    <div class="row anExperience">
-                        <div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
-                        <div class="col-lg-10 col-md-10">
-                            <h3>Marc Robert</h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                            <button data-expandable="false">En savoir plus...</button>
-                        </div>
-                    </div>
-                    <div class="row anExperience">
-                        <div class="col-lg-10 col-md-10">
-                            <h3>Jean Louis</h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                            <button data-expandable="false">En savoir plus...</button>
-                        </div>
-                        <div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
-                    </div>
-                </li>
+                {% endfor %}
+                {#<li class="col-lg-12 col-md-12">#}
+                    {#<div class="row anExperience">#}
+                        {#<div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>#}
+                        {#<div class="col-lg-10 col-md-10">#}
+                            {#<h3>Marc Robert</h3>#}
+                            {#<p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>#}
+                            {#<button data-expandable="false">En savoir plus...</button>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="row anExperience">#}
+                        {#<div class="col-lg-10 col-md-10">#}
+                            {#<h3>Jean Louis</h3>#}
+                            {#<p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>#}
+                            {#<button data-expandable="false">En savoir plus...</button>#}
+                        {#</div>#}
+                        {#<div class="image col-lg-2 col-md-2 visible-md visible-lg" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>#}
+                    {#</div>#}
+                {#</li>#}
             </ul>
         </div>
     </div>
@@ -146,10 +151,11 @@
         </h2>
     </div>
     <div class="row">
-        <form id="WriteExperience" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-            <input class="col-lg-4 col-md-4 "type="text" id="TxtPseudoExperience" name="pseudoExperience" placeholder="Pseudo"/>
-            <textarea id="TxtMessageExperience" name="messageExperience" placeholder="Votre expérience"></textarea>
-            <button name="submitExperience" id="BtnSubmitExperience">Partager</button>
-        </form>
+        {#<form id="WriteExperience" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">#}
+            {#<input class="col-lg-4 col-md-4 "type="text" id="TxtPseudoExperience" name="pseudoExperience" placeholder="Pseudo"/>#}
+            {#<textarea id="TxtMessageExperience" name="messageExperience" placeholder="Votre expérience"></textarea>#}
+            {#<button name="submitExperience" id="BtnSubmitExperience">Partager</button>#}
+        {#</form>#}
+        {{ form_commentaire|raw }}
     </div>
 </section>

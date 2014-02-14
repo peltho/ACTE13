@@ -26,47 +26,26 @@
     <div class="row">
         <div id="TemoignageCarousel" class="carousel col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
             <ul class="slides">
+                {% for comment in toRender.comments %}
+                {% if loop.index0 % 2 == 0 %}
+                    {% if loop.index0 != 0 %}</li>{% endif %}
                 <li class="col-lg-12 col-md-12">
+                {% endif %}
                     <div class="row anTemoignage">
                         <div class="col-lg-12 col-md-12">
-                            <h3>Brice</h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                            <h3>{{ comment.comment_author }}</h3>
+                            <p>{{ comment.comment_content }}</p>
                             <button data-expandable="false">En savoir plus...</button>
                         </div>
                     </div>
-                    <div class="row anTemoignage">
-                        <div class="col-lg-12 col-md-12">
-                            <h3>Paul </h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                            <button data-expandable="false">En savoir plus...</button>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-12 col-md-12">
-                    <div class="row anTemoignage">
-                        <div class="col-lg-12 col-md-12">
-                            <h3>Marc Robert</h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                            <button data-expandable="false">En savoir plus...</button>
-                        </div>
-                    </div>
-                    <div class="row anTemoignage">
-                        <div class="col-lg-12 col-md-12">
-                            <h3>Jean Louis</h3>
-                            <p>Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                            <button data-expandable="false">En savoir plus...</button>
-                        </div>
-                    </div>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
     <div class="row">
-        <form id="WriteTemoignage" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-            <input class="col-lg-4 col-md-4 "type="text" id="TxtPseudoTemoignage" name="pseudoTemoignage" placeholder="Pseudo"/>
-            <textarea id="TxtMessageTemoignage" name="messageTemoignage" placeholder="Votre commentaire"></textarea>
-            <button name="submitTemoignage" id="BtnSubmitTemoignage">Partager</button>
-        </form>
+        <div class="col-lg-10 col-md-10 col-md-offset-1 col-lg-offset-1">
+            {{ form_commentaire|raw }}
+        </div>
     </div>
 </section>
 <section id="OtherNews">
@@ -83,7 +62,6 @@
                         <option>2011</option>
                     </select>
                 </label>
-
             </h2>
         </div>
     </div>
