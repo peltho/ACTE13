@@ -32,7 +32,7 @@
         <nav class="container" id="LogoContainer">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <img id="Logo" alt="ACTE13" src="{{ render.template_directory }}/images/logo-acte13.png"/>
+                    <img id="Logo" alt="ACTE13" src="{{ render.template_directory }}/images/logo-acte132.png"/>
                     {% if render.isHome %}
                         <h1 id="NomAssociation">Association pour la Concertation dans le Travail Educatif</h1>
                     {% else %}
@@ -46,8 +46,10 @@
                         {{ render.menu|raw }}
                     </ul>
                 </div>
+
             </div>
         </nav>
+        <div id="ButtonMenu" onclick="OpenMenu()" class="visible-xs visible-sm"></div>
     </header>
     <div class="container">
         <div class="row">

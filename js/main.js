@@ -11,14 +11,16 @@ $(document).ready(function(){
         controlNav: false,
         directionNav:false
     });
-    $('#ExperienceEquipeCarousel,#ExperienceJeuneCarousel,#ExperienceAncienCarousel').flexslider({
+    $('#TemoignageCarousel,#ExperienceEquipeCarousel,#ExperienceJeuneCarousel,#ExperienceAncienCarousel').flexslider({
         slideshow: true,
         controlNav: true,
         directionNav:true
     });
     $('#ExperienceExterneTab a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
+        e.preventDefault();
+        $('#ExperienceExterneTab li').removeClass('actived');
+        $(this).tab('show');
+        $(this).parent().parent().addClass('actived');
     });
     $('#BackToTop').on('click',function (e) {
         $('html, body').stop().animate({
@@ -32,12 +34,12 @@ $(document).ready(function(){
         direction:'right',
         beforeOpen: function() {
             $("#jPanelMenu-menu").addClass('open');
-            $("#HeaderNavBar").css('left','-'+jQuery("#jPanelMenu-menu").css('width'));
+            $("#Header").css('left','-'+jQuery("#jPanelMenu-menu").css('width'));
             $("#wpadminbar").attr('style','left: -'+jQuery("#jPanelMenu-menu").css('width')+'!important');
             $("#BackToTop").addClass("noDisplay");
         },
         beforeClose: function() {
-            $("#HeaderNavBar").css('left','0');
+            $("#Header").css('left','0');
             $("#wpadminbar").attr('style','left: 0 !important');
         },
         afterClose: function(){
