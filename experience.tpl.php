@@ -13,12 +13,25 @@ $args = array(
     'id_form' => 'WriteTemoignage',
     'title_reply' => '',
     'label_submit' => "Partager",
-    'comment_field' => '<textarea id="TxtMessageTemoignage" name="comment" placeholder="Votre commentaire"></textarea>',
+    'comment_field' => '<textarea id="TxtMessageTemoignage" name="comment" placeholder="Votre expérience"></textarea>',
     'comment_notes_before' => '',
     'comment_notes_after' => ''
 );
 
-$toRender['comments'] = get_comments(array('post_id' => get_the_id(), 'status' => 'approve', 'comment_type' => 'jeune'));
+$comments_anciens = array();
+$comments_jeunes = array();
+$comments = get_comments(array('post_id' => get_the_id(), 'status' => 'approve'));
+foreach($comments as $c) {
+    switch(get_comment_meta($c->comment_ID)['type']['0']) {
+        case "ancien": array_push($comments_anciens, $c); break;
+        case "jeune": array_push($comments_jeunes, $c); break;
+//        default : echo "aucun";
+    }
+}
+
+$toRender['comments_jeunes'] = $comments_jeunes;
+$toRender['comments_anciens'] = $comments_anciens;
+$toRender['comments_equipe'] = get_field("temoignage");
 
 ob_start();
 comment_form($args);

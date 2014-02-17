@@ -1,0 +1,13 @@
+{% for a in actualites %}
+    <li class="row">
+        <div class="col-lg-5 col-md-5">
+            <img src="{{ a.thumbnail }}"/>
+        </div>
+        <div class="col-lg-7 col-md-7">
+            <h3>{{ a.post_title }}</h3>
+            <p class="posted">Le {{ a.post_date|date('d/m/Y') }}</p>
+            <p class="content">{{ a.post_content|raw }}</p>
+            <a class="more">Lire la suite...</a>
+        </div>
+    </li>
+{% endfor %}

@@ -7,12 +7,12 @@ function isValidEmailAddress(email) {
 
 $(document).ready(function(){
     $('#headerCarousel').flexslider({
-        slideshow: true,
+        slideshow: false,
         controlNav: false,
         directionNav:false
     });
     $('#TemoignageCarousel,#ExperienceEquipeCarousel,#ExperienceJeuneCarousel,#ExperienceAncienCarousel').flexslider({
-        slideshow: true,
+        slideshow: false,
         controlNav: true,
         directionNav:true
     });
@@ -84,10 +84,12 @@ function OpenMenu(){
     }
 }
 
+var $btnExpendable = $("button[data-expandable]");
+
 //Expandable
-$("button[data-expandable]").click(function(){
+$btnExpendable.click(function(){
     if(!$(this).prev().hasClass("expandable")){
-        console.log($(this));
+        //console.log($(this));
         $(this).prev().switchClass("","expandable",300);
         $(this).attr("data-expandable",'true');
         $(this).html("Réduire");
@@ -98,8 +100,48 @@ $("button[data-expandable]").click(function(){
     }
 });
 
+$btnExpendable.each(function() {
+    console.log($(this).prev().height());
+    if($(this).prev().height() < 68)
+        $(this).remove();
+});
 
+// News dynamiques
+jQuery("#SelSortYearNews").change(function() {
+    theYear = $(this).val();
+    jQuery('#ListOtherNews').html('<div class="load">Chargement...</div>');
+    jQuery.ajax({
+        url: '/wordpress/wp-content/themes/acte13/ajax.news.php',
+        type: 'post',
+        data: { year: theYear },
+        success: function(data) {
+            jQuery('#ListOtherNews').html(data);
+        },
+        error: function(a, text, error) {
+            console.log(text + " " + error);
+        }
+    });
+});
 
-
-
-
+jQuery("#BtnSubmitContact").click(function() {
+    jQuery('#Process').text("Envoi en cours...");
+    jQuery.ajax({
+        url: '/wordpress/wp-content/themes/acte13/ajax.contact.php',
+        type: 'post',
+        data: { nom: $('#TxtNom').val(),
+                mail: $('#TxtMail').val(),
+                objet: $('#TxtObjet').val(),
+                message: $('#TxtMessageRDV').val()
+        },
+        success: function(data) {
+            if(data)
+                jQuery('#Process').html('<span class="alert alert-success">Message envoyé !</span>');
+            else
+                jQuery('#Process').html('<span class="alert alert-danger">Une erreur est survenue.</span>');
+        },
+        error: function(a, text, error) {
+            jQuery('#Process').html('<span class="alert alert-danger">Une erreur est survenue.</span>');
+            console.log(text + " " + error);
+        }
+    });
+});

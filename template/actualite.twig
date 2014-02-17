@@ -1,8 +1,7 @@
-
 <section class="row" id="SinglePost">
-	<div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-		<article id="SinglePostContent">
-			<h1>{{ toRender.actualite.post_title }}</h1>
+    <div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+        <article id="SinglePostContent">
+            <h1>{{ toRender.actualite.post_title }}</h1>
             <img src="{{ toRender.actualite.image }}"/>
             <div class="content">
                 <p class="posted"><small>postée le {{ toRender.actualite.post_date|date('d/m/Y') }}</small></p>
@@ -10,17 +9,17 @@
             </div>
 
         </article>
-	</div>
+    </div>
 </section>
 <section id="Temoignage" >
     <div class="row">
         <div class="col-lg-5 col-md-5 col-lg-offset-6 col-md-offset-6">
-            <a  id="BtnWriteExperience" href="#WriteTemoignage">Rédiger votre témoignage</a>
+            <a  id="BtnWriteExperience" href="#WriteTemoignage">Rédigez un commentaire</a>
         </div>
     </div>
     <div class="row">
         <h2 class="col-lg-5 col-md-5 col-lg-offset-1 col-md-offset-1">
-            Les témoignages :
+            Les commentaires :
         </h2>
     </div>
     <div class="row">
@@ -34,7 +33,7 @@
                     <div class="row anTemoignage">
                         <div class="col-lg-12 col-md-12">
                             <h3>{{ comment.comment_author }}</h3>
-                            <p>{{ comment.comment_content }}</p>
+                            <p>{{ comment.comment_content|nl2br }}</p>
                             <button data-expandable="false">En savoir plus...</button>
                         </div>
                     </div>
@@ -56,10 +55,10 @@
                 <label id="NewsSortByYear">
                     Trier par année
                     <select id="SelSortYearNews" name="sortYearNews">
-                        <option>2014</option>
+                        <option>{{ "now"|date('Y') }}</option>
                         <option>2013</option>
-                        <option>2012</option>
-                        <option>2011</option>
+                        {#<option>2012</option>#}
+                        {#<option>2011</option>#}
                     </select>
                 </label>
             </h2>
@@ -68,39 +67,19 @@
     <div class="row">
         <div class="col-lg-10 col-md-10 col-md-offset-1 col-lg-offset-1">
             <ul id="ListOtherNews" >
+                {% for a in actualites %}
                 <li class="row">
                     <div class="col-lg-5 col-md-5">
-                        <img src=""/>
+                        <img src="{{ a.thumbnail }}"/>
                     </div>
                     <div class="col-lg-7 col-md-7">
-                        <h3>Hello</h3>
-                        <p class="posted">Le {{ toRender.actualite.post_date|date('d/m/Y') }}</p>
-                        <p class="content">Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
+                        <h3>{{ a.post_title }}</h3>
+                        <p class="posted">Le {{ a.post_date|date('d/m/Y') }}</p>
+                        <p class="content">{{ a.post_content|raw }}</p>
                         <a class="more">Lire la suite...</a>
                     </div>
                 </li>
-                <li class="row">
-                    <div class="col-lg-5 col-md-5">
-                        <img src=""/>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <h3>Hello2</h3>
-                        <p class="posted">Le {{ toRender.actualite.post_date|date('d/m/Y') }}</p>
-                        <p class="content">Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                        <a class="more">Lire la suite...</a>
-                    </div>
-                </li>
-                <li class="row">
-                    <div class="col-lg-5 col-md-5">
-                        <img src=""/>
-                    </div>
-                    <div class="col-lg-7 col-md-7">
-                        <h3>Hello3</h3>
-                        <p class="posted">Le {{ toRender.actualite.post_date|date('d/m/Y') }}</p>
-                        <p class="content">Lorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srfLorem pisum srf</p>
-                        <a class="more">Lire la suite...</a>
-                    </div>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

@@ -6525,10 +6525,10 @@ td.visible-print {
 #Temoignage .anTemoignage p {
   margin-top: 8px;
   color: #676764;
-  height: 68px;
+  max-height: 68px;
+  word-wrap: break-word;
   overflow: hidden;
   font-size: 12px;
-  margin-bottom: 0px;
 }
 #ExperienceEquipe .anExperience p.expandable,
 #ExperienceEquipe .anTemoignage p.expandable,
@@ -6538,7 +6538,7 @@ td.visible-print {
 #ExperienceAncien .anTemoignage p.expandable,
 #Temoignage .anExperience p.expandable,
 #Temoignage .anTemoignage p.expandable {
-  height: 100%;
+  max-height: 100%;
 }
 #ExperienceEquipe .anExperience button,
 #ExperienceEquipe .anTemoignage button,
@@ -6716,8 +6716,8 @@ td.visible-print {
 #Temoignage textarea:focus {
   outline: none;
 }
-#Experience button,
-#Temoignage button {
+#Experience input[type="submit"],
+#Temoignage input[type="submit"] {
   background: #a90000;
   color: white;
   border: 0px;
@@ -6728,12 +6728,12 @@ td.visible-print {
   transition: all 0.3s;
   float: right;
 }
-#Experience button:focus,
-#Temoignage button:focus {
+#Experience input[type="submit"]:focus,
+#Temoignage input[type="submit"]:focus {
   outline: none;
 }
-#Experience button:hover,
-#Temoignage button:hover {
+#Experience input[type="submit"]:hover,
+#Temoignage input[type="submit"]:hover {
   background: #676764;
 }
 #Temoignage {

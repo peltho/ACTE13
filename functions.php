@@ -52,19 +52,11 @@ function acte13_scripts() {
 
 add_theme_support('post-thumbnails');
 
-function alter_comment_form_fields($fields) {
-    $fields['author'] = '<input class="col-lg-4 col-md-4 " type="text" id="TxtPseudoTemoignage" name="author" placeholder="Pseudo"/>';
-    $fields['email'] = '';  //removes email field
-    $fields['url'] = '';  //removes website field
-    $fields['type'] = '<select name="type"><option value="aucun">Aucun</option><option value="jeune">Jeune</option><option value="ancien">Ancien</option></select>';
-    return $fields;
-}
-add_filter('comment_form_default_fields', 'alter_comment_form_fields');
-
-function add_comment_meta_values($comment_id) {
-    if(isset($_POST['type'])) {
-        $type = wp_filter_nohtml_kses($_POST['type']);
-        add_comment_meta($comment_id, 'type', $type, false);
-    }
-}
-add_action ('comment_post', 'add_comment_meta_values', 1);
+//function alter_comment_form_fields($fields) {
+//    $fields['author'] = '<input class="col-lg-4 col-md-4 " type="text" id="TxtPseudoTemoignage" name="author" placeholder="Pseudo"/>';
+//    $fields['email'] = '';  //removes email field
+//    $fields['url'] = '';  //removes website field
+//    $fields['type'] = '<select name="type"><option value="aucun">Aucun</option><option value="jeune">Jeune</option><option value="ancien">Ancien</option></select>';
+//    return $fields;
+//}
+//add_filter('comment_form_default_fields', 'alter_comment_form_fields');

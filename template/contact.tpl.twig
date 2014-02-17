@@ -4,35 +4,38 @@
     </h1>
 </div>
 <div class="row">
-    <p id="DescriptionPage" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-        Mauris eget est malesuada, aliquet leo at, malesuada diam. In placerat bibendum urna, sit amet dictum felis vestibulum eu
-    </p>
+    <div id="DescriptionPage" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+        {{ render.description|raw }}
+    </div>
 </div>
 <div id="Contact" class="row">
     <div class="col-lg-12 col-md-12">
         <div class="row">
             <div class="col-lg-5 col-lg-offset-1">
-                <form>
+                <div>
+                    <div id="Process"></div>
                     <input type="text" name="nomContact" id="TxtNom" placeholder="Votre prénom et nom"/>
                     <input type="email" name="mailContact" id="TxtMail" placeholder="Votre adresse mail"/>
                     <input type="text" name="objetContact" id="TxtObjet" placeholder="Objet du message"/>
+                    <textarea name="messageContact" id="TxtMessageRDV" placeholder="Votre message" style="margin: 15px 0px 0px; width: 365px; height: 194px;"></textarea>
                     <button name="submitContact" id="BtnSubmitContact">Envoyer</button>
-                </form>
+                </div>
             </div>
             <div id="GoogleMapContainer" class="col-lg-5">
                 <div id="GoogleMap" style="border: 1px solid #676764;"><div class="loader">Chargement de la carte...</div></div>
                 <div id="Coordonnees" style="border: 1px solid #676764;">
                     <p>ACTE 13</p>
-                    <p>Adresse1</p>
-                    <p>Adresse2</p>
-                    <p>Code postal Ville</p>
-                    <p>numTel</p>
-                    <p>numFax</p>
-                    <a href="mail:" class="email">acte13[at]gmail.com</a>
+                    <p>{{ render.coordonnees.adresse }}</p>
+                    {% if render.coordonnees.complement_adresse %}<p>{{ render.coordonnees.complement_adresse }}</p>{% endif %}
+                    <p>{{ render.coordonnees.code_postal }}</p>
+                    <p>{{ render.coordonnees.telephone }}</p>
+                    {% if render.coordonnees.fax %}<p>{{ render.coordonnees.fax }}</p>{% endif %}
+                    <a href="mail:{{ render.coordonnees.email }}" class="email">{{ render.coordonnees.email }}</a>
                 </div>
                 <div id="PiecesJointes">
-                    <a href="#" class="link">Télécharger machin chose</a>
-                    <a href="#" class="link">Télécharger truc </a>
+                    {% for f in render.fichiers %}
+                        <a href="{{ f.fichier.url }}" class="link">Télécharger {{ f.fichier.title }}</a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

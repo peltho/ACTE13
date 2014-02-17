@@ -8,6 +8,7 @@
 get_header();
 $toRender['template_directory'] = get_template_directory_uri();
 $toRender['title'] = get_the_title();
+$toRender['description'] = get_field("description");
 
 $query = new WP_Query();
 $articles = $query->query(array('post_type' => 'post', 'posts_per_page' => 4, 'orderBy' => 'date', 'order' => 'DESC'));
@@ -21,7 +22,7 @@ $lienActualites = get_permalink(get_page_by_title('Actualités'));
 
 $twig = initTwig('');
 echo $twig->render('home.tpl.twig', array('render'     => $toRender,
-										  'articles'   => $articles,
-										  'calendrier' => $calendrier,
-										  'actualites' => $lienActualites));
+                                          'articles'   => $articles,
+                                          'calendrier' => $calendrier,
+                                          'actualites' => $lienActualites));
 get_footer();
