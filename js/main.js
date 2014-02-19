@@ -109,7 +109,8 @@ $btnExpendable.each(function() {
 // News dynamiques
 jQuery("#SelSortYearNews").change(function() {
     theYear = $(this).val();
-    jQuery('#ListOtherNews').html('<div class="load">Chargement...</div>');
+    jQuery('#ListOtherNews').html('<div class="load" style="height: 200px;"><img src="/wordpress/wp-content/themes/acte13/images/loader.gif" alt="loader"/></div>');
+    jQuery('.load').css({'padding-top': '75px', 'text-align': 'center'});
     jQuery.ajax({
         url: '/wordpress/wp-content/themes/acte13/ajax.news.php',
         type: 'post',
