@@ -52,11 +52,44 @@ function acte13_scripts() {
 
 add_theme_support('post-thumbnails');
 
-//function alter_comment_form_fields($fields) {
-//    $fields['author'] = '<input class="col-lg-4 col-md-4 " type="text" id="TxtPseudoTemoignage" name="author" placeholder="Pseudo"/>';
-//    $fields['email'] = '';  //removes email field
-//    $fields['url'] = '';  //removes website field
-//    $fields['type'] = '<select name="type"><option value="aucun">Aucun</option><option value="jeune">Jeune</option><option value="ancien">Ancien</option></select>';
-//    return $fields;
-//}
-//add_filter('comment_form_default_fields', 'alter_comment_form_fields');
+function get_excerpt_by_id($post_id) {
+    $the_post = get_post($post_id); //Gets post ID
+    $the_excerpt = $the_post->post_content; //Gets post_content to be used as a basis for the excerpt
+    $excerpt_length = 35; //Sets excerpt length by word count
+    $the_excerpt = strip_tags(strip_shortcodes($the_excerpt)); //Strips tags and images
+    $words = explode(' ', $the_excerpt, $excerpt_length + 1);
+    if(count($words) > $excerpt_length) :
+        array_pop($words);
+        array_push($words, '…');
+        $the_excerpt = implode(' ', $words);
+    endif;
+    $the_excerpt = '<p>' . $the_excerpt . '</p>';
+    return $the_excerpt;
+}
+
+function get_first_post_year() {
+    $query = new WP_Query();
+    $firstPost = $query->query(array('post_type' => 'post', 'orderBy' => 'date', 'order' => 'ASC', 'showposts' => 1));
+    $f = get_post($firstPost[0]->ID, "ARRAY_A");
+    return strtok($f['post_date'], '-');
+}
+
+function get_last_post_year() {
+    $query = new WP_Query();
+    $lastPost = $query->query(array('post_type' => 'post', 'orderBy' => 'date', 'order' => 'DESC', 'showposts' => 1));
+    $l = get_post($lastPost[0]->ID, "ARRAY_A");
+    return strtok($l['post_date'], '-');
+}
+
+function get_years() {
+    $annees = array();
+    $firstYear = get_first_post_year();
+    $lastYear = get_last_post_year();
+
+    $i = 0;
+    for($annee = $firstYear; $annee <= $lastYear; ++$annee) {
+        $annees[$i] = $annee;
+        $i++;
+    }
+    return array_reverse($annees);
+}

@@ -12,7 +12,7 @@
                     <img src="{{ article.thumbnail }}"/>
                     <div class="content">
                         <h3>{{ article.post_title }}</h3>
-                        <p>{{ article.post_content }}</p>
+                        <p>{{ article.excerpt|raw }}</p>
                         <a href="{{ article.permalink }}">En savoir plus</a>
                         <p class="posted"><small>postée le {{ article.post_date|date('d/m/Y') }}</small></p>
                     </div>

@@ -13,9 +13,11 @@ $toRender['description'] = get_field("description");
 $query = new WP_Query();
 $articles = $query->query(array('post_type' => 'post', 'posts_per_page' => 4, 'orderBy' => 'date', 'order' => 'DESC'));
 foreach($articles as $a) {
+    $a->excerpt = get_excerpt_by_id($a->ID);
     $a->thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($a->ID), "medium")[0];
     $a->permalink = get_permalink($a->ID);
 }
+
 
 $calendrier = do_shortcode('[ai1ec view="monthly"]');
 $lienActualites = get_permalink(get_page_by_title('Actualités'));
