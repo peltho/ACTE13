@@ -4,7 +4,6 @@ require_once('../../../wp-load.php');
 require_once('functions.php');
 
 $query = new WP_Query();
-//$postYear = strtok(get_post(get_the_id(), "ARRAY_A")['post_date'], '-');
 $year = (isset($_POST['year'])) ? $_POST['year'] : null;
 
 $allArticles = $query->query(array('post_type' => 'post', 'orderBy' => 'date', 'order' => 'DESC', 'year' => $year));
