@@ -93,3 +93,11 @@ function get_years() {
     }
     return array_reverse($annees);
 }
+
+//Ajout de nouvelles tailles d'images
+if ( function_exists( 'add_image_size' ) ) {
+    add_image_size('miniature', 270, 135, true);
+    add_image_size('article', 758, 200, true);
+    add_image_size('event', 600, 200, true);
+    add_image_size('event_thumbnail', 50, 50, true);
+}

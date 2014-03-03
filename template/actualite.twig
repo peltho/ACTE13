@@ -1,5 +1,5 @@
 <section class="row" id="SinglePost">
-    <div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+    <div {% if event %}class="col-lg-8 col-md-8"{% else %}class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1"{% endif %}>
         <article id="SinglePostContent">
             <h1>{{ toRender.actualite.post_title }}</h1>
             <img src="{{ toRender.actualite.image }}"/>
@@ -7,11 +7,18 @@
                 <p class="posted"><small>postée le {{ toRender.actualite.post_date|date('d/m/Y') }}</small></p>
                 <p>{{ toRender.actualite.post_content }}</p>
             </div>
-
         </article>
     </div>
+    {% if event %}
+        <div class="col-lg-4 col-md-4">
+            <section id="Calendar">
+                {{ calendrier|raw }}
+            </section>
+        </div>
+    {% endif %}
 </section>
-<section id="Temoignage" >
+{% if event == false %}
+<section id="Temoignage">
     <div class="row">
         <div class="col-lg-5 col-md-5 col-lg-offset-6 col-md-offset-6">
             <a  id="BtnWriteExperience" href="#WriteTemoignage">Rédigez un commentaire</a>
@@ -83,3 +90,4 @@
         </div>
     </div>
 </section>
+{% endif %}

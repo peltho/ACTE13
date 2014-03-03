@@ -11,7 +11,7 @@ $toRender['menu'] = wp_nav_menu( array( 'theme_location' => 'main_nav','depth'=>
 $toRender['template_directory'] = get_template_directory_uri();
 $toRender['title'] = get_the_title();
 $toRender['isHome'] = is_page_template("home.tpl.php");
-
+$toRender['description'] = get_field("description");
 
 $twig = initTwig('');
 echo $twig->render('header.twig', array('render' => $toRender));

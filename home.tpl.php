@@ -14,7 +14,7 @@ $query = new WP_Query();
 $articles = $query->query(array('post_type' => 'post', 'posts_per_page' => 4, 'orderBy' => 'date', 'order' => 'DESC'));
 foreach($articles as $a) {
     $a->excerpt = get_excerpt_by_id($a->ID);
-    $a->thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($a->ID), "medium")[0];
+    $a->thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($a->ID), "miniature")[0];
     $a->permalink = get_permalink($a->ID);
 }
 

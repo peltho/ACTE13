@@ -8,7 +8,7 @@
 <script src="/wordpress/wp-content/themes/acte13/js/springy.js"></script>
 <script src="/wordpress/wp-content/themes/acte13/js/springyui.js"></script>
 
-<canvas id="springydemo" width="915" height="480"></canvas>
+<canvas id="springydemo" width="915" height="600"></canvas>
 
 <script>
     var graph = new Springy.Graph();
@@ -25,6 +25,7 @@
     $j(function(){
         var springy = window.springy = $j('#springydemo').springy({
             graph: graph,
+            nodeFont: "12px Verdana",
             nodeSelected: function(node){
                 console.log('Node selected: ' + JSON.stringify(node.data));
             }

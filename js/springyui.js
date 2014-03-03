@@ -27,7 +27,7 @@
 
     jQuery.fn.springy = function(params) {
         var graph = this.graph = params.graph || new Springy.Graph();
-        var nodeFont = "16px Verdana, sans-serif";
+        var nodeFont = "14px Open Sans, sans-serif";
         var edgeFont = "8px Verdana, sans-serif";
         var stiffness = params.stiffness || 400.0;
         var repulsion = params.repulsion || 400.0;
@@ -140,7 +140,7 @@
         };
 
         var getTextHeight = function(node) {
-            return 16;
+            return 14;
             // In a more modular world, this would actually read the font size, but I think leaving it a constant is sufficient for now.
             // If you change the font size, I'd adjust this too.
         };
@@ -311,13 +311,16 @@
 
                 // fill background
                 if (selected !== null && selected.node !== null && selected.node.id === node.id) {
-                    ctx.fillStyle = "#FFFFE0";
+                    ctx.fillStyle = "#FFFFFF";
                 } else if (nearest !== null && nearest.node !== null && nearest.node.id === node.id) {
-                    ctx.fillStyle = "#EEEEEE";
+                    ctx.fillStyle = "#FFFFFF";
                 } else {
                     ctx.fillStyle = "#FFFFFF";
                 }
-                ctx.fillRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
+                //ctx.fillRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, 35, 0,2*Math.PI);
+                ctx.fill();
 
                 if (node.data.image == undefined) {
                     ctx.textAlign = "left";
