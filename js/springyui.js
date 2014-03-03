@@ -96,13 +96,13 @@
         });
 
         // Basic double click handler
-        jQuery(canvas).dblclick(function(e) {
+        jQuery(canvas).click(function(e) {
             var pos = jQuery(this).offset();
             var p = fromScreen({x: e.pageX - pos.left, y: e.pageY - pos.top});
             selected = layout.nearest(p);
             node = selected.node;
-            if (node && node.data && node.data.ondoubleclick) {
-                node.data.ondoubleclick();
+            if (node && node.data && node.data.onclick) {
+                node.data.onclick();
             }
         });
 

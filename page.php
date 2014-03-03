@@ -7,5 +7,5 @@ $toRender['page'] = get_post(get_the_id(), "ARRAY_A");
 $toRender['page']['image'] = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), "article")[0];
 
 $twig = initTwig('');
-echo $twig->render('page.twig', array('toRender' => $toRender));
+echo $twig->render('page.twig', array('render' => $toRender));
 get_footer();

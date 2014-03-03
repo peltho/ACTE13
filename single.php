@@ -48,7 +48,7 @@ comment_form($args);
 $form_commentaire = ob_get_clean();
 
 $twig = initTwig('');
-echo $twig->render('actualite.twig', array('toRender' => $toRender,
+echo $twig->render('actualite.twig', array('render' => $toRender,
                                            'form_commentaire' => $form_commentaire,
                                            'actualites' => $allArticles,
                                            'annees' => $annees,

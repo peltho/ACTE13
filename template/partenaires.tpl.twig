@@ -8,27 +8,32 @@
 <script src="/wordpress/wp-content/themes/acte13/js/springy.js"></script>
 <script src="/wordpress/wp-content/themes/acte13/js/springyui.js"></script>
 
-<canvas id="springydemo" width="915" height="600"></canvas>
-
+<canvas id="springy" width="915" height="600">
+    <ul id="partenaires">
+        {% for p in render.partenaires %}
+            <li class="partenaire-{{ loop.index0 }}"><a href="{{ p.url }}">{{ p.name }}</a></li>
+        {% endfor %}
+    </ul>
+</canvas>
 <script>
-    var graph = new Springy.Graph();
-
-    var acte13 = graph.newNode({label: 'ACTE 13'});
-    var miage = graph.newNode({label: 'Miage Aix-Marseille'});
-    var cg = graph.newNode({label: 'Conseil général des Bouches-du-Rhône'});
-
-    graph.newEdge(acte13, miage, {color: '#A90000'});
-    graph.newEdge(acte13, cg, {color: '#A90000'});
-
     var $j = jQuery.noConflict();
 
+    var graph = new Springy.Graph();
+    var acte13 = graph.newNode({label: 'ACTE 13'});
+
+    $j("#partenaires li").each(function(i) {
+        var label = $j(".partenaire-"+i).text();
+        var url = $j(".partenaire-"+i+" a").attr('href');
+        var p = graph.newNode({
+            label: label,
+            onclick: function() { window.location = url; }
+        });
+        graph.newEdge(acte13, p, {color: '#A90000'});
+    });
+
     $j(function(){
-        var springy = window.springy = $j('#springydemo').springy({
-            graph: graph,
-            nodeFont: "12px Verdana",
-            nodeSelected: function(node){
-                console.log('Node selected: ' + JSON.stringify(node.data));
-            }
+        var springy = window.springy = $j('#springy').springy({
+            graph: graph
         });
     });
 </script>
