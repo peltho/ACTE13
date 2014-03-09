@@ -70,15 +70,15 @@ function get_excerpt_by_id($post_id) {
 function get_first_post_year() {
     $query = new WP_Query();
     $firstPost = $query->query(array('post_type' => 'post', 'orderBy' => 'date', 'order' => 'ASC', 'showposts' => 1));
-    $f = get_post($firstPost[0]->ID, "ARRAY_A");
-    return strtok($f['post_date'], '-');
+    $f = (!empty($firstPost)) ? get_post($firstPost[0]->ID, "ARRAY_A"): null;
+    return (!empty($f)) ? strtok($f['post_date'], '-') : "Aucune";
 }
 
 function get_last_post_year() {
     $query = new WP_Query();
     $lastPost = $query->query(array('post_type' => 'post', 'orderBy' => 'date', 'order' => 'DESC', 'showposts' => 1));
-    $l = get_post($lastPost[0]->ID, "ARRAY_A");
-    return strtok($l['post_date'], '-');
+    $l = (!empty($lastPost)) ? get_post($lastPost[0]->ID, "ARRAY_A") : null;
+    return (!empty($l)) ? strtok($l['post_date'], '-') : "Aucune";
 }
 
 function get_years() {
