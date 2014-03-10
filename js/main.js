@@ -22,11 +22,8 @@ $(document).ready(function(){
         $(this).tab('show');
         $(this).parent().parent().addClass('actived');
     });
-    $('#BackToTop').on('click',function (e) {
-        $('html, body').stop().animate({
-            'scrollTop': 0
-        }, 900, 'swing');
-    });
+
+
 
     //Menu responsive Jpanel
     jPM = $.jPanelMenu({
@@ -147,3 +144,9 @@ jQuery("#BtnSubmitContact").click(function() {
         }
     });
 });
+
+function backToTop(){
+    $('html, body').stop().animate({
+        'scrollTop': 0
+    }, 900, 'swing');
+}

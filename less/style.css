@@ -6152,7 +6152,6 @@ td.visible-print {
 #Dispositifs-Missions >li >div>div:not(.image) {
   min-height: 131px;
   overflow: hidden;
-  padding-bottom: 25px;
 }
 #Dispositifs-Missions >li .image {
   padding-bottom: 16.666666666667%;
@@ -6171,14 +6170,18 @@ td.visible-print {
 }
 #Dispositifs-Missions >li p {
   margin-top: 8px;
+  word-wrap: break-word;
+  -ms-word-wrap: break-word;
+  white-space: normal;
   color: #676764;
-  height: 68px;
+  max-height: 68px;
   overflow: hidden;
   font-size: 12px;
   margin-bottom: 0px;
 }
 #Dispositifs-Missions >li p.expandable {
   height: 100%;
+  max-height: 100%;
 }
 #Dispositifs-Missions >li button {
   background: none;
@@ -6527,6 +6530,8 @@ td.visible-print {
   color: #676764;
   max-height: 68px;
   word-wrap: break-word;
+  -ms-word-wrap: break-word;
+  white-space: normal;
   overflow: hidden;
   font-size: 12px;
 }
@@ -6873,11 +6878,13 @@ td.visible-print {
   width: 14.28%;
   box-sizing: border-box;
   background: #eeeeee;
-  border: 8px solid #fff;
+  border: 4px solid #fff;
   position: relative;
   padding-bottom: 11%;
   color: #676764;
   transition: all 0.3s;
+  display: block;
+  float: left;
 }
 #Calendar .ai1ec-week >td:hover,
 #Calendar .ai1ec-week .ai1ec-weekday:hover,
