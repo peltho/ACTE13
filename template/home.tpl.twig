@@ -1,5 +1,5 @@
 <div class="row">
-    <div id="Description" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+    <div id="DescriptionHome" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
         {{ render.description|raw }}
     </div>
 </div>
@@ -12,7 +12,7 @@
                     <img src="{{ article.thumbnail }}"/>
                     <div class="content">
                         <h3>{{ article.post_title }}</h3>
-                        <p>{{ article.excerpt|raw }}</p>
+                        <div>{{ article.excerpt|raw }}</div>
                         <a href="{{ article.permalink }}">En savoir plus</a>
                         <p class="posted"><small>postée le {{ article.post_date|date('d/m/Y') }}</small></p>
                     </div>
