@@ -3,6 +3,11 @@
         {{ render.title }}
     </h1>
 </div>
+<div class="row">
+    <div id="Description" class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
+        {{ render.description|raw }}
+    </div>
+</div>
 <ul class="row" id="Dispositifs-Missions">
     {% for r in render.fields %}
     <li class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1 col-sm-10 col-sm-offset-1">
@@ -10,7 +15,7 @@
             <div class="image col-lg-2 col-md-2" style="background-image:url({{ r.image.url }});">{{ r.image.title }}</div>
             <div class="col-lg-10 col-md-10">
                 <h2>{{ r.titre }}</h2>
-                {{ r.texte|raw }}
+                <div>{{ r.texte|raw }}</div>
                 <button data-expandable="false">En savoir plus...</button>
             </div>
         </div>

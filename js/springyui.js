@@ -318,6 +318,7 @@
                     ctx.fillStyle = "#FFFFFF";
                 }
                 //ctx.fillRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
+                // On dessine un cercle au lieu d'un rectangle
                 ctx.beginPath();
                 ctx.arc(s.x, s.y, 35, 0,2*Math.PI);
                 ctx.fill();
