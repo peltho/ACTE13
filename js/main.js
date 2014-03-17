@@ -23,7 +23,11 @@ $(document).ready(function(){
         $(this).parent().parent().addClass('actived');
     });
 
-
+    $btnExpendable.each(function() {
+        console.log($(this).prev().height());
+        if($(this).prev().height() < 68)
+            $(this).remove();
+    });
 
     //Menu responsive Jpanel
     jPM = $.jPanelMenu({
@@ -97,11 +101,7 @@ $btnExpendable.click(function(){
     }
 });
 
-$btnExpendable.each(function() {
-    console.log($(this).prev().height());
-    if($(this).prev().height() < 68)
-        $(this).remove();
-});
+
 
 // News dynamiques
 jQuery("#SelSortYearNews").change(function() {

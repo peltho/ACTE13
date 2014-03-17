@@ -5866,7 +5866,7 @@ td.visible-print {
   color: #676764;
 }
 #MainNavigation >li.current-menu-item {
-  background: #a90000;
+  background: #D90015;
 }
 #MainNavigation >li.current-menu-item a {
   position: relative;
@@ -5882,7 +5882,7 @@ td.visible-print {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-top-color: #a90000;
+  border-top-color: #D90015;
   border-width: 10px;
 }
 #MainNavigation >li:first-child {
@@ -5964,7 +5964,7 @@ td.visible-print {
   text-transform: uppercase;
   font-size: 1.4em;
   display: block;
-  border-bottom: 2px solid #a90000;
+  border-bottom: 2px solid #D90015;
 }
 #jPanelMenu-menu >li {
   background: white;
@@ -5978,7 +5978,7 @@ td.visible-print {
 }
 #jPanelMenu-menu >li:hover >a,
 #jPanelMenu-menu >li .current-menu-item >a {
-  background: #a90000;
+  background: #D90015;
   color: white;
 }
 #jPanelMenu-menu >li:hover >.sub-menu,
@@ -6027,13 +6027,13 @@ td.visible-print {
   font-size: 14px;
 }
 #Content h1 {
-  color: #a90000;
+  color: #D90015;
   font-weight: 500;
   font-size: 25px;
   margin: 0px;
   margin-left: 20px;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 #Content h2 {
   font-size: 20px;
@@ -6043,9 +6043,10 @@ td.visible-print {
 #Description {
   color: #676764;
   overflow: hidden;
-  font-size: 17px;
+  font-size: 12px;
   margin-top: 20px;
-  margin-bottom: 50px;
+  padding: 0px;
+  margin-bottom: 15px;
   font-weight: 300;
 }
 #DescriptionPage {
@@ -6090,7 +6091,7 @@ td.visible-print {
   position: absolute;
 }
 #ListNews .newsTpl >article >.content >h3 {
-  color: #a90000;
+  color: #D90015;
   margin: 0px;
   font-weight: 500;
   padding: 0px;
@@ -6106,7 +6107,7 @@ td.visible-print {
   text-decoration: underline;
   text-align: center;
   font-size: 1rem;
-  color: #a90000;
+  color: #D90015;
 }
 #ListNews .newsTpl >article >.content >a:hover {
   text-decoration: none;
@@ -6127,7 +6128,7 @@ td.visible-print {
 #MoreNews >div {
   line-height: 38px;
   height: 38px;
-  background: #a90000;
+  background: #D90015;
   color: white;
   display: block;
   font-variant: small-caps;
@@ -6162,11 +6163,32 @@ td.visible-print {
   overflow: hidden;
 }
 #Dispositifs-Missions >li h2 {
-  color: #a90000;
+  color: #D90015;
   font-weight: 500;
   font-size: 18px;
   margin: 0;
+  margin-top: 4px;
+}
+#Dispositifs-Missions >li h2 +div {
+  max-height: 68px;
+  overflow: hidden;
+}
+#Dispositifs-Missions >li h2 +div ul li {
+  font-size: 12px;
+}
+#Dispositifs-Missions >li h2 +div.expandable {
+  height: 100%;
+  max-height: 100%;
+}
+#Dispositifs-Missions >li h3 {
+  color: #D90015;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
   margin-top: 10px;
+}
+#Dispositifs-Missions >li h3 ~p {
+  margin-left: 20px;
 }
 #Dispositifs-Missions >li p {
   margin-top: 8px;
@@ -6174,19 +6196,13 @@ td.visible-print {
   -ms-word-wrap: break-word;
   white-space: normal;
   color: #676764;
-  max-height: 68px;
-  overflow: hidden;
   font-size: 12px;
-  margin-bottom: 0px;
-}
-#Dispositifs-Missions >li p.expandable {
-  height: 100%;
-  max-height: 100%;
+  margin-bottom: 10px;
 }
 #Dispositifs-Missions >li button {
   background: none;
   border: 0px;
-  color: #a90000;
+  color: #D90015;
   font-size: 11px;
   padding: 0;
   margin: 0px;
@@ -6217,7 +6233,7 @@ td.visible-print {
   background: #fff;
 }
 #Equipe li h2 {
-  color: #a90000;
+  color: #D90015;
   font-weight: 500;
   font-size: 18px;
   margin: 0;
@@ -6274,7 +6290,7 @@ td.visible-print {
   outline: none;
 }
 #Contact button {
-  background: #a90000;
+  background: #D90015;
   color: white;
   border: 0px;
   padding: 5px 20px;
@@ -6301,7 +6317,7 @@ td.visible-print {
   font-size: 13px;
 }
 #Contact #Coordonnees .email {
-  color: #a90000;
+  color: #D90015;
   font-weight: 500;
   font-size: 13px;
   display: block;
@@ -6320,7 +6336,7 @@ td.visible-print {
   margin-bottom: 30px;
 }
 #Contact #PiecesJointes .link {
-  color: #a90000;
+  color: #D90015;
   font-weight: 500;
   font-size: 13px;
   display: block;
@@ -6512,7 +6528,7 @@ td.visible-print {
 #ExperienceAncien .anTemoignage h3,
 #Temoignage .anExperience h3,
 #Temoignage .anTemoignage h3 {
-  color: #a90000;
+  color: #D90015;
   font-weight: 500;
   font-size: 18px;
   margin: 0;
@@ -6556,7 +6572,7 @@ td.visible-print {
   bottom: 0px;
   background: none;
   border: 0px;
-  color: #a90000;
+  color: #D90015;
   font-size: 11px;
   padding: 0;
   margin: 0px;
@@ -6590,7 +6606,7 @@ td.visible-print {
   outline: none;
 }
 #BtnWriteExperience {
-  background: #a90000;
+  background: #D90015;
   float: right;
   margin-left: 15px;
   display: block;
@@ -6626,13 +6642,13 @@ td.visible-print {
   text-decoration: none;
 }
 #ExperienceExterneTab >li.actived >h2 {
-  background: #a90000;
+  background: #D90015;
 }
 #SinglePostContent {
   text-align: center;
 }
 #SinglePostContent >h1 {
-  color: #a90000;
+  color: #D90015;
   margin: 0px;
   font-weight: 500;
   padding: 0px;
@@ -6663,7 +6679,7 @@ td.visible-print {
   position: absolute;
 }
 #SinglePostContent >.content >h2 {
-  color: #a90000;
+  color: #D90015;
   margin: 0px;
   font-weight: 500;
   padding: 0px;
@@ -6679,7 +6695,7 @@ td.visible-print {
   text-decoration: underline;
   text-align: center;
   font-size: 1rem;
-  color: #a90000;
+  color: #D90015;
 }
 #SinglePostContent >.content >a:hover {
   text-decoration: none;
@@ -6723,7 +6739,7 @@ td.visible-print {
 }
 #Experience input[type="submit"],
 #Temoignage input[type="submit"] {
-  background: #a90000;
+  background: #D90015;
   color: white;
   border: 0px;
   padding: 5px 20px;
@@ -6742,12 +6758,12 @@ td.visible-print {
   background: #676764;
 }
 #Temoignage {
-  border-top: 1px solid #a90000;
+  border-top: 1px solid #D90015;
   padding-top: 15px;
   margin-top: 15px;
 }
 #OtherNews {
-  border-top: 1px solid #a90000;
+  border-top: 1px solid #D90015;
   padding-top: 15px;
   margin-top: 15px;
 }
@@ -6789,7 +6805,7 @@ td.visible-print {
   height: 170px;
 }
 #ListOtherNews >li h3 {
-  color: #a90000;
+  color: #D90015;
   margin: 0px;
   font-weight: bold;
   font-size: 1.6rem;
@@ -6805,7 +6821,7 @@ td.visible-print {
 #ListOtherNews >li .more {
   display: block;
   text-align: center;
-  color: #a90000;
+  color: #D90015;
   font-size: 1.2rem;
   text-decoration: underline;
 }
@@ -6906,7 +6922,7 @@ td.visible-print {
 #Calendar .ai1ec-week .ai1ec-weekday:hover .ai1ec-date +a .ai1ec-event-title,
 #Calendar tr >td:hover .ai1ec-date +a .ai1ec-event-title,
 #Calendar tr .ai1ec-weekday:hover .ai1ec-date +a .ai1ec-event-title {
-  color: #a90000;
+  color: #D90015;
 }
 #Calendar .ai1ec-week >td >div,
 #Calendar .ai1ec-week .ai1ec-weekday >div,
@@ -6960,7 +6976,7 @@ td.visible-print {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-right-color: #a90000;
+  border-right-color: #D90015;
   border-width: 10px;
 }
 #Calendar .ai1ec-week >td .ai1ec-date +a .ai1ec-event-time,
@@ -6989,7 +7005,7 @@ td.visible-print {
 #Calendar .ai1ec-week .ai1ec-weekday.ai1ec-event,
 #Calendar tr >td.ai1ec-event,
 #Calendar tr .ai1ec-weekday.ai1ec-event {
-  background: #a90000 !important;
+  background: #D90015 !important;
   color: #fff !important;
 }
 #Calendar .ai1ec-week >td.ai1ec-empty,
@@ -7000,14 +7016,14 @@ td.visible-print {
 }
 #Calendar .ai1ec-weekday {
   text-align: center;
-  color: #a90000 !important;
+  color: #D90015 !important;
   font-weight: 300;
   font-size: 14px !important;
   font-variant: small-caps;
 }
 #Calendar .ai1ec-weekday:hover {
   background: #eeeeee !important;
-  color: #a90000 !important;
+  color: #D90015 !important;
 }
 #Calendar #ai1ec-calendar-view {
   background: #fff;
@@ -7019,7 +7035,7 @@ td.visible-print {
   overflow: hidden;
 }
 #ListNextEvents h3 {
-  background: #a90000;
+  background: #D90015;
   color: white;
   text-align: center;
   position: relative;
@@ -7072,7 +7088,7 @@ td.visible-print {
 }
 #ListNextEvents >.listMonths .listEvents >li a:hover {
   text-decoration: none;
-  border-left: 3px solid #a90000;
+  border-left: 3px solid #D90015;
 }
 #ListNextEvents >.listMonths .listEvents >li a img {
   height: 50px;
@@ -7102,7 +7118,7 @@ td.visible-print {
   right: 10px;
   display: block;
   width: 50px;
-  background-color: #a90000;
+  background-color: #D90015;
   background-repeat: no-repeat;
   background-image: url(../images/ico_backToTop.png);
   background-position: center center;
