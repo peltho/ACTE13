@@ -7,10 +7,39 @@
   }
 }
 
-@media (max-width: 480px){
+@media (max-width: 768px){
   body{
     padding-top:50px;
   }
+  #Dispositifs-Missions{
+    >li .image {
+      padding-bottom: 0 !important;
+      height:200px !important;
+    }
+    padding: 0 20px !important;
+  }
+  #Calendar{
+    margin-top:20px;
+    padding: 0 15px;
+  }
+  #ListNews{
+    .newsTpl{
+      >article{
+        max-height: none !important;
+        height: auto !important;
+        >img{
+          height:auto !important;
+        }
+        .content{
+          height:auto !important;
+        }
+      }
+    }
+  }
+  #Description{
+    padding: 0 20px !important;
+  }
+
   #BackToTop{
     width:100% !important;
     position:static !important;

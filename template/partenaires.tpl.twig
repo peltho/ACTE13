@@ -18,6 +18,10 @@
 <script>
     var $j = jQuery.noConflict();
 
+    $j("#springy").attr('width',$j("#Content").innerWidth()-30);
+    $j(window).resize(function(){
+        $j("#springy").attr('width',$j("#Content").innerWidth()-30);
+    });
     var graph = new Springy.Graph();
     var acte13 = graph.newNode({label: 'ACTE 13'});
 
