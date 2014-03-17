@@ -11,7 +11,8 @@ $message = htmlentities($_POST['message']);
 if(!empty($nom) || !empty($mail) || !empty($message) || !empty($objet)) {
     $twig = initTwig('');
     $message = $twig->render('ajax.contact.tpl.twig', array('message' => $message, 'email' => $mail, 'nom' => $nom));
-    $headers = 'From: '.$nom.' <'.$mail.'>' . "\r\n";
+    $headers[] = 'From: '.$nom.' <'.$mail.'>' . "\r\n";
+    $headers[] = 'Content-Type: text/html' . "\r\n";
     echo wp_mail(get_bloginfo('admin_email'), $objet, $message, $headers);
 }
 else

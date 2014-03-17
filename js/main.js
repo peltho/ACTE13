@@ -106,7 +106,7 @@ $btnExpendable.each(function() {
 // News dynamiques
 jQuery("#SelSortYearNews").change(function() {
     theYear = $(this).val();
-    jQuery('#ListOtherNews').html('<div class="load" style="height: 200px;"><img src="/wordpress/wp-content/themes/acte13/images/loader.gif" alt="Chargement..."/></div>');
+    jQuery('#ListOtherNews').html('<div class="load" style="height: 200px;"><img src="/wp-content/themes/acte13/images/loader.gif" alt="Chargement..."/></div>');
     jQuery('.load').css({'padding-top': '75px', 'text-align': 'center'});
     jQuery.ajax({
         url: '/wordpress/wp-content/themes/acte13/ajax.news.php',
@@ -124,7 +124,7 @@ jQuery("#SelSortYearNews").change(function() {
 jQuery("#BtnSubmitContact").click(function() {
     jQuery('#Process').text("Envoi en cours...");
     jQuery.ajax({
-        url: '/wordpress/wp-content/themes/acte13/ajax.contact.php',
+        url: '/wp-content/themes/acte13/ajax.contact.php',
         type: 'post',
         data: { nom: $('#TxtNom').val(),
                 mail: $('#TxtMail').val(),
@@ -136,7 +136,7 @@ jQuery("#BtnSubmitContact").click(function() {
                 jQuery('#Process').text("Message envoyé !");
             }
             else
-                jQuery('#Process').text("Une erreur est survenue.");
+                jQuery('#Process').text("Une erreur est survenue.").css('color', 'red');
         },
         error: function(a, text, error) {
             jQuery('#Process').text("Une erreur est survenue.");
