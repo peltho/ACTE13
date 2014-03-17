@@ -15,10 +15,8 @@
     color: @blue;
     font-weight:500;
     font-size:25px;
-    margin:0px;
-    margin-left:20px;
-    margin-top:10px;
-    margin-bottom:0px;
+    margin:10px 20px 15px 20px;
+    padding:0px;
   }
   h2{
     font-size:20px;
@@ -30,20 +28,48 @@
 #Description{
   color:@darkGray;
   overflow:hidden;
-  font-size:12px;
-  margin-top:20px;
-  padding:0px;
-
-  margin-bottom:15px;
-  font-weight:300;
+  font-size:16px;
+  font-weight: 300;
+  padding:20px 20px;
+  margin-bottom:30px;
+  p{
+    margin-bottom: 0px;
+  }
 }
-#DescriptionPage{
+
+
+#DescriptionHome{
   color:@darkGray;
   overflow:hidden;
-  font-size:17px;
+  font-size:15pt;
   margin-top:10px;
-  margin-bottom:30px;
-  font-weight:300;
+  font-weight: 300;
+  line-height: 18.2pt;
+  margin-bottom:40px;
+  position:relative;
+  &:before{
+    content:" ";
+    position: absolute;
+    background: url(../images/icon-ouv.png);
+    top:0px;
+    left:0px;
+    display:block;
+    width:21px;
+    height:19px;
+  }
+  &:after{
+    content:" ";
+    position: absolute;
+    background: url(../images/icon-ferm.png);
+    bottom:0px;
+    right:0px;
+    display:block;
+    width:21px;
+    height:19px;
+  }
+  p{
+    text-align: center !important;
+  }
 }
 #ListNews{
   padding:0px;
@@ -74,7 +100,7 @@
           left:-8px;
           position:absolute;
         }
-        >h3{
+        >h3,h4,h5,h6{
           color:@blue;
           margin:0px;
           font-weight:500;
@@ -82,9 +108,10 @@
           font-size:1.8rem;
           margin-bottom:8px;
         }
-        >p{
-          font-size:1rem;
+        >div>p{
+          font-size:11px;
           color:@darkGray;
+          margin-bottom:2px;
         }
         >a{
           display:block;
@@ -101,6 +128,8 @@
           margin:0;
           right:30px;
           bottom:2px;
+          font-size:10px;
+          color:@darkGray;
           text-align:right;
         }
       }
@@ -155,14 +184,18 @@
       color:@blue;
       font-weight:500;
       font-size:18px;
+      line-height: 16px;
       margin:0;
       margin-top:4px;
+      margin-bottom: 8px;
       +div{
         max-height:68px;
         overflow:hidden;
         ul{
           li{
-            font-size:12px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 20px;
             color: @gray;
           }
         }
@@ -173,11 +206,12 @@
 
       }
     }
-    h3{
+    h3,h4,h5,h6{
       color:@blue;
       font-weight:500;
       font-size:14px;
       margin:0;
+      line-height: 12px;
       margin-top:10px;
       ~p{
         margin-left:20px;
@@ -190,7 +224,9 @@
       -ms-word-wrap:break-word;
       white-space: normal;
       color:@darkGray;
-      font-size:12px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 20px;
       margin-bottom:10px;
     }
 
@@ -206,11 +242,10 @@
       margin-top:0px;
       display:block;
       transition: all 0.3s;
-      padding:5px 0px;
+      padding:10px 0px;
       text-align:center;
       &:hover{
-        color:white;
-        background:@darkGray;
+        text-decoration: underline;
       }
       &:focus{
         outline:none;
@@ -232,14 +267,16 @@
       color:@blue;
       font-weight:500;
       font-size:18px;
+      line-height: 16px;
       margin:0;
       margin-top:10px;
     }
-    p{
+    p,h3,h4,h5,h6{
       margin-top:8px;
+      font-weight: normal;
       color:@darkGray;
       overflow:hidden;
-      font-size:12px;
+      font-size:13px;
       margin-bottom:0px;
       &.poste{
         margin-top:15px;

@@ -6175,6 +6175,7 @@ td.visible-print {
 }
 #Dispositifs-Missions >li h2 +div ul li {
   font-size: 12px;
+  color: #555555;
 }
 #Dispositifs-Missions >li h2 +div.expandable {
   height: 100%;
