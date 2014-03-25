@@ -5829,7 +5829,7 @@ td.visible-print {
   margin-top: 5px;
 }
 #LogoContainer {
-  margin-top: 35px;
+  padding-top: 35px;
 }
 #LogoContainer #Logo {
   width: 140px;
@@ -6030,10 +6030,8 @@ td.visible-print {
   color: #D90015;
   font-weight: 500;
   font-size: 25px;
-  margin: 0px;
-  margin-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 0px;
+  margin: 10px 20px 15px 20px;
+  padding: 0px;
 }
 #Content h2 {
   font-size: 20px;
@@ -6043,19 +6041,46 @@ td.visible-print {
 #Description {
   color: #676764;
   overflow: hidden;
-  font-size: 12px;
-  margin-top: 20px;
-  padding: 0px;
-  margin-bottom: 15px;
+  font-size: 16px;
   font-weight: 300;
+  padding: 20px 20px;
+  margin-bottom: 30px;
 }
-#DescriptionPage {
+#Description p {
+  margin-bottom: 0px;
+}
+#DescriptionHome {
   color: #676764;
   overflow: hidden;
-  font-size: 17px;
+  font-size: 15pt;
   margin-top: 10px;
-  margin-bottom: 30px;
   font-weight: 300;
+  line-height: 18.2pt;
+  margin-bottom: 40px;
+  position: relative;
+}
+#DescriptionHome:before {
+  content: " ";
+  position: absolute;
+  background: url(../images/icon-ouv.png);
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 21px;
+  height: 19px;
+}
+#DescriptionHome:after {
+  content: " ";
+  position: absolute;
+  background: url(../images/icon-ferm.png);
+  bottom: 0px;
+  right: 0px;
+  display: block;
+  width: 21px;
+  height: 19px;
+}
+#DescriptionHome p {
+  text-align: center !important;
 }
 #ListNews {
   padding: 0px;
@@ -6090,7 +6115,10 @@ td.visible-print {
   left: -8px;
   position: absolute;
 }
-#ListNews .newsTpl >article >.content >h3 {
+#ListNews .newsTpl >article >.content >h3,
+#ListNews .newsTpl >article >.content h4,
+#ListNews .newsTpl >article >.content h5,
+#ListNews .newsTpl >article >.content h6 {
   color: #D90015;
   margin: 0px;
   font-weight: 500;
@@ -6098,9 +6126,10 @@ td.visible-print {
   font-size: 1.8rem;
   margin-bottom: 8px;
 }
-#ListNews .newsTpl >article >.content >p {
-  font-size: 1rem;
+#ListNews .newsTpl >article >.content >div>p {
+  font-size: 11px;
   color: #676764;
+  margin-bottom: 2px;
 }
 #ListNews .newsTpl >article >.content >a {
   display: block;
@@ -6117,6 +6146,8 @@ td.visible-print {
   margin: 0;
   right: 30px;
   bottom: 2px;
+  font-size: 10px;
+  color: #676764;
   text-align: right;
 }
 #MoreNews {
@@ -6166,29 +6197,40 @@ td.visible-print {
   color: #D90015;
   font-weight: 500;
   font-size: 18px;
+  line-height: 16px;
   margin: 0;
   margin-top: 4px;
+  margin-bottom: 8px;
 }
 #Dispositifs-Missions >li h2 +div {
   max-height: 68px;
   overflow: hidden;
 }
 #Dispositifs-Missions >li h2 +div ul li {
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
   color: #555555;
 }
 #Dispositifs-Missions >li h2 +div.expandable {
   height: 100%;
   max-height: 100%;
 }
-#Dispositifs-Missions >li h3 {
+#Dispositifs-Missions >li h3,
+#Dispositifs-Missions >li h4,
+#Dispositifs-Missions >li h5,
+#Dispositifs-Missions >li h6 {
   color: #D90015;
   font-weight: 500;
   font-size: 14px;
   margin: 0;
+  line-height: 12px;
   margin-top: 10px;
 }
-#Dispositifs-Missions >li h3 ~p {
+#Dispositifs-Missions >li h3 ~p,
+#Dispositifs-Missions >li h4 ~p,
+#Dispositifs-Missions >li h5 ~p,
+#Dispositifs-Missions >li h6 ~p {
   margin-left: 20px;
 }
 #Dispositifs-Missions >li p {
@@ -6197,7 +6239,9 @@ td.visible-print {
   -ms-word-wrap: break-word;
   white-space: normal;
   color: #676764;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
   margin-bottom: 10px;
 }
 #Dispositifs-Missions >li button {
@@ -6212,12 +6256,11 @@ td.visible-print {
   margin-top: 0px;
   display: block;
   transition: all 0.3s;
-  padding: 5px 0px;
+  padding: 10px 0px;
   text-align: center;
 }
 #Dispositifs-Missions >li button:hover {
-  color: white;
-  background: #676764;
+  text-decoration: underline;
 }
 #Dispositifs-Missions >li button:focus {
   outline: none;
@@ -6237,17 +6280,27 @@ td.visible-print {
   color: #D90015;
   font-weight: 500;
   font-size: 18px;
+  line-height: 16px;
   margin: 0;
   margin-top: 10px;
 }
-#Equipe li p {
+#Equipe li p,
+#Equipe li h3,
+#Equipe li h4,
+#Equipe li h5,
+#Equipe li h6 {
   margin-top: 8px;
+  font-weight: normal;
   color: #676764;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 0px;
 }
-#Equipe li p.poste {
+#Equipe li p.poste,
+#Equipe li h3.poste,
+#Equipe li h4.poste,
+#Equipe li h5.poste,
+#Equipe li h6.poste {
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -7175,6 +7228,9 @@ td.visible-print {
     display: none;
   }
 }
+p {
+  text-align: justify !important;
+}
 @media (max-width: 768px) {
   body {
     padding-top: 50px;
@@ -7229,6 +7285,7 @@ td.visible-print {
   }
   #Header #LogoContainer {
     margin-top: 0px;
+    padding: 0px;
   }
   #Header #LogoContainer >.row {
     position: absolute;
