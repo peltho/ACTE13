@@ -11,6 +11,7 @@ $toRender['title'] = get_the_title();
 
 $toRender['fields'] = get_field("equipe");
 $toRender['description'] = get_field("description");
+$toRender['extrait'] = get_field("extrait");
 
 $twig = initTwig('');
 echo $twig->render('equipe.tpl.twig', array('render' => $toRender));

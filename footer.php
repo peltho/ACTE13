@@ -8,6 +8,7 @@
  */
 
 $toRender['menu'] = wp_nav_menu( array( 'theme_location' => 'footer_nav','depth'=>1,'echo'=>0,'container' =>'','items_wrap' => '%3$s') );
+$toRender['template_directory'] = get_template_directory_uri();
 $twig = initTwig('');
 
 echo $twig->render('footer.twig', array('render'=>$toRender));

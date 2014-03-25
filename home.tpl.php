@@ -9,6 +9,7 @@ get_header();
 $toRender['template_directory'] = get_template_directory_uri();
 $toRender['title'] = get_the_title();
 $toRender['description'] = get_field("description");
+$toRender['extrait'] = get_field("extrait");
 
 $query = new WP_Query();
 $articles = $query->query(array('post_type' => 'post', 'posts_per_page' => 4, 'orderBy' => 'date', 'order' => 'DESC'));

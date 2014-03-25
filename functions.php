@@ -18,8 +18,8 @@ if( !is_admin()) {
     // less compiler
     require  get_template_directory().'/libraries/lessphp/lessc.inc.php';
     $less = new lessc;
-    $less->compileFile(get_template_directory().'/less/style.less', get_template_directory().'/less/style.css');
-    //$less->checkedCompile(get_template_directory().'/less/style.less', get_template_directory().'/less/style.css');
+    //$less->compileFile(get_template_directory().'/less/style.less', get_template_directory().'/less/style.css');
+    $less->checkedCompile(get_template_directory().'/less/style.less', get_template_directory().'/less/style.css');
 
     function initTwig($path) {
         require_once get_template_directory().'/libraries/Twig/lib/Twig/Autoloader.php';

@@ -5,28 +5,28 @@ function isValidEmailAddress(email) {
     return pattern.test(email);
 };
 
-$(document).ready(function(){
-    $('#headerCarousel').flexslider({
+jQuery(document).ready(function(){
+    jQuery('#headerCarousel').flexslider({
         slideshow: false,
         controlNav: false,
         directionNav:false
     });
-    $('#TemoignageCarousel,#ExperienceEquipeCarousel,#ExperienceJeuneCarousel,#ExperienceAncienCarousel').flexslider({
+    jQuery('#TemoignageCarousel,#ExperienceEquipeCarousel,#ExperienceJeuneCarousel,#ExperienceAncienCarousel').flexslider({
         slideshow: false,
         controlNav: true,
         directionNav:true
     });
-    $('#ExperienceExterneTab a').click(function (e) {
+    jQuery('#ExperienceExterneTab a').click(function (e) {
         e.preventDefault();
-        $('#ExperienceExterneTab li').removeClass('actived');
-        $(this).tab('show');
-        $(this).parent().parent().addClass('actived');
+        jQuery('#ExperienceExterneTab li').removeClass('actived');
+        jQuery(this).tab('show');
+        jQuery(this).parent().parent().addClass('actived');
     });
 
     $btnExpendable.each(function() {
-        console.log($(this).prev().height());
-        if($(this).prev().height() < 68)
-            $(this).remove();
+        console.log(jQuery(this).prev().height());
+        if(jQuery(this).prev().height() < 68)
+            jQuery(this).remove();
     });
 
     //Menu responsive Jpanel
@@ -34,42 +34,42 @@ $(document).ready(function(){
         menu: '#MainNavigation',
         direction:'right',
         beforeOpen: function() {
-            $("#jPanelMenu-menu").addClass('open');
-            $("#Header").css('left','-'+jQuery("#jPanelMenu-menu").css('width'));
-            $("#wpadminbar").attr('style','left: -'+jQuery("#jPanelMenu-menu").css('width')+'!important');
-            $("#BackToTop").addClass("noDisplay");
+            jQuery("#jPanelMenu-menu").addClass('open');
+            jQuery("#Header").css('left','-'+jQuery("#jPanelMenu-menu").css('width'));
+            jQuery("#wpadminbar").attr('style','left: -'+jQuery("#jPanelMenu-menu").css('width')+'!important');
+            jQuery("#BackToTop").addClass("noDisplay");
         },
         beforeClose: function() {
-            $("#Header").css('left','0');
-            $("#wpadminbar").attr('style','left: 0 !important');
+            jQuery("#Header").css('left','0');
+            jQuery("#wpadminbar").attr('style','left: 0 !important');
         },
         afterClose: function(){
-            $("#jPanelMenu-menu").removeClass('open');
-            $("#BackToTop").removeClass("noDisplay");
+            jQuery("#jPanelMenu-menu").removeClass('open');
+            jQuery("#BackToTop").removeClass("noDisplay");
         }
     });
     jPM.on();
 
     //Réglage de quelques items de navigation
-    $("#BackToTop").css("bottom",jQuery("footer").height()+40);
-    if($('#wpadminbar').length>0){
-        if($(window).width()<=480) $('#HeaderNavBar').css('margin-top','46px');
-        else $('#HeaderNavBar').css('margin-top','32px');
+    jQuery("#BackToTop").css("bottom",jQuery("footer").height()+40);
+    if(jQuery('#wpadminbar').length>0){
+        if(jQuery(window).width()<=480) jQuery('#HeaderNavBar').css('margin-top','46px');
+        else jQuery('#HeaderNavBar').css('margin-top','32px');
     }
 });
 //Evenement se déroulant lors du scrolling
 jQuery(window).scroll(function() {
-    if($(window).scrollTop() > 0){
-        $("#BackToTop").addClass("display");
+    if(jQuery(window).scrollTop() > 0){
+        jQuery("#BackToTop").addClass("display");
     }else {
-        $("#BackToTop").removeClass("display");
+        jQuery("#BackToTop").removeClass("display");
     }
-    if($(window).scrollTop()>$("#Header").height()){
-        $("#Header").addClass("fixed");
-        $("#Header+.container").css("margin-top",$("#Header").height())
+    if(jQuery(window).scrollTop()>jQuery("#Header").height()){
+        jQuery("#Header").addClass("fixed");
+        jQuery("#Header+.container").css("margin-top",jQuery("#Header").height())
     }else{
-        $("#Header").removeClass("fixed");
-        $("#Header+.container").css("margin-top",0);
+        jQuery("#Header").removeClass("fixed");
+        jQuery("#Header+.container").css("margin-top",0);
     }
 });
 
@@ -85,19 +85,19 @@ function OpenMenu(){
     }
 }
 
-var $btnExpendable = $("button[data-expandable]");
+var $btnExpendable = jQuery("button[data-expandable]");
 
 //Expandable
 $btnExpendable.click(function(){
-    if(!$(this).prev().hasClass("expandable")){
-        //console.log($(this));
-        $(this).prev().switchClass("","expandable",300);
-        $(this).attr("data-expandable",'true');
-        $(this).html("Réduire");
+    if(!jQuery(this).prev().hasClass("expandable")){
+        //console.log(jQuery(this));
+        jQuery(this).prev().switchClass("","expandable",300);
+        jQuery(this).attr("data-expandable",'true');
+        jQuery(this).html("Réduire");
     }else{
-        $(this).prev().switchClass("expandable","",300);
-        $(this).attr("data-expandable",'false');
-        $(this).html("En savoir plus...");
+        jQuery(this).prev().switchClass("expandable","",300);
+        jQuery(this).attr("data-expandable",'false');
+        jQuery(this).html("En savoir plus...");
     }
 });
 
@@ -105,7 +105,7 @@ $btnExpendable.click(function(){
 
 // News dynamiques
 jQuery("#SelSortYearNews").change(function() {
-    theYear = $(this).val();
+    theYear = jQuery(this).val();
     jQuery('#ListOtherNews').html('<div class="load" style="height: 200px;"><img src="/wp-content/themes/acte13/images/loader.gif" alt="Chargement..."/></div>');
     jQuery('.load').css({'padding-top': '75px', 'text-align': 'center'});
     jQuery.ajax({
@@ -126,10 +126,10 @@ jQuery("#BtnSubmitContact").click(function() {
     jQuery.ajax({
         url: '/wp-content/themes/acte13/ajax.contact.php',
         type: 'post',
-        data: { nom: $('#TxtNom').val(),
-                mail: $('#TxtMail').val(),
-                objet: $('#TxtObjet').val(),
-                message: $('#TxtMessageRDV').val()
+        data: { nom: jQuery('#TxtNom').val(),
+                mail: jQuery('#TxtMail').val(),
+                objet: jQuery('#TxtObjet').val(),
+                message: jQuery('#TxtMessageRDV').val()
         },
         success: function(data) {
             if(data > 0) {
@@ -146,7 +146,7 @@ jQuery("#BtnSubmitContact").click(function() {
 });
 
 function backToTop(){
-    $('html, body').stop().animate({
+    jQuery('html, body').stop().animate({
         'scrollTop': 0
     }, 900, 'swing');
 }
