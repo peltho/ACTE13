@@ -23,11 +23,11 @@
 </head>
 <body id="Body" class="{{ render.title|raw }}">
     <header id="Header">
-        <div class="mask backgroundFlexslider">
-            <div>
-                <div class="item">
-
-                </div>
+        <div id="HeaderCarousel" class="mask carousel slide" data-ride="carousel" data-interval="10000">
+            <div class="carousel-inner">
+                {% for image in render.headerBackground %}
+                    <div class="item {% if loop.index0==0 %}active{% endif %}" style="background-image:url({{ image.image.sizes.large }})" ></div>
+                {% endfor %}
             </div>
         </div>
         <nav class="container" id="LogoContainer">

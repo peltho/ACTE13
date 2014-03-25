@@ -2,7 +2,7 @@
     <div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
         <article id="SinglePostContent">
             <h1>{{ render.page.post_title }}</h1>
-            <img src="{{ render.page.image }}"/>
+            {% if render.page.image %}<img src="{{ render.page.image }}"/> {% endif %}
             <div class="content">
                 <p class="posted"><small>postée le {{ render.page.post_date|date('d/m/Y') }}</small></p>
                 <p>{{ render.page.post_content }}</p>

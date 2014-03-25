@@ -12,6 +12,9 @@ $toRender['template_directory'] = get_template_directory_uri();
 $toRender['title'] = get_the_title();
 $toRender['isHome'] = is_page_template("home.tpl.php");
 $toRender['description'] = get_field("description");
+$parametres = get_page_by_title( "Paramètres");
+$toRender['headerBackground'] = get_field("images",$parametres->ID);
+
 
 $twig = initTwig('');
 echo $twig->render('header.twig', array('render' => $toRender));
