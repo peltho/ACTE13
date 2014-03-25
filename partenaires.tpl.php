@@ -17,8 +17,6 @@ foreach($partenaires as $k => $p) {
     $toRender['partenaires'][$k]['name'] = $p->post_title;
 }
 
-
-
 $twig = initTwig('');
 echo $twig->render('partenaires.tpl.twig', array('render' => $toRender));
 get_footer();

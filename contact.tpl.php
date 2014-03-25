@@ -10,6 +10,7 @@ get_header();
 $toRender['template_directory'] = get_template_directory_uri();
 $toRender['title'] = get_the_title();
 $toRender['description'] = get_field("description");
+$toRender['extrait'] = get_field("extrait");
 
 $toRender['coordonnees']['adresse'] = get_field("adresse");
 $toRender['coordonnees']['complement_adresse'] = get_field("complement_dadresse");

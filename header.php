@@ -9,7 +9,7 @@
 
 $toRender['menu'] = wp_nav_menu( array( 'theme_location' => 'main_nav','depth'=>1,'echo'=>0,'menu_id' =>'NavHeader','container' =>'','items_wrap' => '%3$s') );
 $toRender['template_directory'] = get_template_directory_uri();
-$toRender['title'] = get_the_title();
+$toRender['title'] = (get_the_title() ? get_the_title() : "Introuvable");
 $toRender['isHome'] = is_page_template("home.tpl.php");
 $toRender['description'] = get_field("description");
 $parametres = get_page_by_title( "Paramètres");

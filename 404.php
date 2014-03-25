@@ -8,5 +8,3 @@ $toRender['description'] ="La page recherchée est indisponible ou n'existe pas"
 $twig = initTwig('');
 echo $twig->render('dispositifs.missions.tpl.twig', array('render' => $toRender));
 get_footer();
- 
- 
