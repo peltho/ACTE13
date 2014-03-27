@@ -30,25 +30,28 @@ jQuery(document).ready(function(){
     });
 
     //Menu responsive Jpanel
-    jPM = $.jPanelMenu({
-        menu: '#MainNavigation',
-        direction:'right',
-        beforeOpen: function() {
-            jQuery("#jPanelMenu-menu").addClass('open');
-            jQuery("#Header").css('left','-'+jQuery("#jPanelMenu-menu").css('width'));
-            jQuery("#wpadminbar").attr('style','left: -'+jQuery("#jPanelMenu-menu").css('width')+'!important');
-            jQuery("#BackToTop").addClass("noDisplay");
-        },
-        beforeClose: function() {
-            jQuery("#Header").css('left','0');
-            jQuery("#wpadminbar").attr('style','left: 0 !important');
-        },
-        afterClose: function(){
-            jQuery("#jPanelMenu-menu").removeClass('open');
-            jQuery("#BackToTop").removeClass("noDisplay");
-        }
-    });
-    jPM.on();
+    if($(window).width()<=990){
+        jPM = $.jPanelMenu({
+            menu: '#MainNavigation',
+            direction:'right',
+            beforeOpen: function() {
+                jQuery("#jPanelMenu-menu").addClass('open');
+                jQuery("#Header").css('left','-'+jQuery("#jPanelMenu-menu").css('width'));
+                jQuery("#wpadminbar").attr('style','left: -'+jQuery("#jPanelMenu-menu").css('width')+'!important');
+                jQuery("#BackToTop").addClass("noDisplay");
+            },
+            beforeClose: function() {
+                jQuery("#Header").css('left','0');
+                jQuery("#wpadminbar").attr('style','left: 0 !important');
+            },
+            afterClose: function(){
+                jQuery("#jPanelMenu-menu").removeClass('open');
+                jQuery("#BackToTop").removeClass("noDisplay");
+            }
+        });
+        jPM.on();
+    }
+
 
     //Réglage de quelques items de navigation
     jQuery("#BackToTop").css("bottom",jQuery("footer").height()+40);

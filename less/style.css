@@ -5848,7 +5848,10 @@ td.visible-print {
   font-size: 2.4rem;
   font-smooth: always;
   margin: 0;
+  background: rgba(255,255,255,0.9);
   margin-left: 30px;
+  border-radius: 3px;
+  padding: 3px 8px;
   color: #676764;
 }
 #MainNavigation {
@@ -6324,6 +6327,7 @@ td.visible-print {
   font-size: 12px;
   text-indent: 7px;
   width: 100%;
+  float: none;
   padding: 7px 0px;
   border: 1px solid #676764;
 }
@@ -6768,6 +6772,7 @@ td.visible-print {
   font-size: 12px;
   text-indent: 7px;
   padding: 7px 0px;
+  float: none;
   margin-bottom: 15px;
   border: 1px solid #676764;
 }
@@ -6950,6 +6955,7 @@ td.visible-print {
 #Calendar .ai1ec-week .ai1ec-weekday,
 #Calendar tr >td,
 #Calendar tr .ai1ec-weekday {
+  visibility: visible !important;
   height: 0;
   width: 14.28%;
   box-sizing: border-box;
@@ -6983,6 +6989,13 @@ td.visible-print {
 #Calendar tr >td:hover .ai1ec-date +a .ai1ec-event-title,
 #Calendar tr .ai1ec-weekday:hover .ai1ec-date +a .ai1ec-event-title {
   color: #D90015;
+}
+#Calendar .ai1ec-week >td.ai1ec-today,
+#Calendar .ai1ec-week .ai1ec-weekday.ai1ec-today,
+#Calendar tr >td.ai1ec-today,
+#Calendar tr .ai1ec-weekday.ai1ec-today {
+  background: #136652;
+  color: white;
 }
 #Calendar .ai1ec-week >td >div,
 #Calendar .ai1ec-week .ai1ec-weekday >div,

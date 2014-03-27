@@ -11,7 +11,7 @@
 <canvas id="springy" width="915" height="600">
     <ul id="partenaires">
         {% for p in render.partenaires %}
-            <li class="partenaire-{{ loop.index0 }}"><a href="{{ p.url }}">{{ p.name }}</a></li>
+            <li class="partenaire-{{ loop.index0 }}"><a data-logo="{{ p.photo }}" href="{{ p.url }}">{{ p.name }}</a></li>
         {% endfor %}
     </ul>
 </canvas>
@@ -23,15 +23,34 @@
         $j("#springy").attr('width',$j("#Content").innerWidth()-30);
     });
     var graph = new Springy.Graph();
-    var acte13 = graph.newNode({label: 'ACTE 13'});
+    var acte13 = graph.newNode({
+        label: ' ',
+        randomRadius:3,
+        background:null,
+        image:{src:"{{ render.template_directory }}/images/logo-acte132.png",width:165,height:122}});
 
     $j("#partenaires li").each(function(i) {
         var label = $j(".partenaire-"+i).text();
         var url = $j(".partenaire-"+i+" a").attr('href');
-        var p = graph.newNode({
-            label: label,
-            onclick: function() { window.location = url; }
-        });
+        var image = $j(".partenaire-"+i+" a").attr('data-logo');
+        var random = ((Math.random()*1.7)+1.1);
+        var p;
+        if(image!=""){
+            p = graph.newNode({
+                label: label,
+                background:"#D90015",
+                randomRadius : random,
+                image : {src:image,width:100*random,height:100*random},
+                onclick: function() { window.location = url; }
+            });
+        }else{
+            p = graph.newNode({
+                label: label,
+                background:"#D90015",
+                randomRadius : random,
+                onclick: function() { window.location = url; }
+            });
+        }
         graph.newEdge(acte13, p, {color: '#A90000'});
     });
 

@@ -89,7 +89,7 @@
         // is a string that becomes both node identifier and label
         for (var i = 0; i < arguments.length; i++) {
             var name = arguments[i];
-            var node = new Node(name, {label:name});
+            var node = new Node(name, {label:name,randomRadius:1,background:"#D90015"});
             this.addNode(node);
         }
     };

@@ -311,24 +311,30 @@
 
                 // fill background
                 if (selected !== null && selected.node !== null && selected.node.id === node.id) {
-                    ctx.fillStyle = "#FFFFFF";
+                    if(node.data.background !== null) ctx.fillStyle = node.data.background;
+
                 } else if (nearest !== null && nearest.node !== null && nearest.node.id === node.id) {
-                    ctx.fillStyle = "#FFFFFF";
+                    if(node.data.background !== null) ctx.fillStyle = node.data.background;
                 } else {
-                    ctx.fillStyle = "#FFFFFF";
+                    if(node.data.background !== null) ctx.fillStyle = node.data.background;
                 }
                 //ctx.fillRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
                 // On dessine un cercle au lieu d'un rectangle
+
                 ctx.beginPath();
-                ctx.arc(s.x, s.y, 35, 0,2*Math.PI);
-                ctx.fill();
+                ctx.arc(s.x, s.y, 32*node.data.randomRadius, 0,2*Math.PI);
+                if(node.data.background !== null) ctx.fill();
 
                 if (node.data.image == undefined) {
                     ctx.textAlign = "left";
                     ctx.textBaseline = "top";
                     ctx.font = (node.data.font !== undefined) ? node.data.font : nodeFont;
-                    ctx.fillStyle = "#000000";
+                    ctx.fillStyle = "#ffffff";
                     var text = (node.data.label !== undefined) ? node.data.label : node.id;
+                    ctx.shadowColor = "black";
+                    ctx.shadowOffsetX=0;
+                    ctx.shadowOffsetY=0;
+                    ctx.shadowBlur=3;
                     ctx.fillText(text, s.x - contentWidth/2, s.y - contentHeight/2);
                 } else {
                     // Currently we just ignore any labels if the image object is set. One might want to extend this logic to allow for both, or other composite nodes.
@@ -336,7 +342,14 @@
                     if (src in nodeImages) {
                         if (nodeImages[src].loaded) {
                             // Our image is loaded, so it's safe to draw
+
+                            ctx.closePath();
+                            ctx.clip();
                             ctx.drawImage(nodeImages[src].object, s.x - contentWidth/2, s.y - contentHeight/2, contentWidth, contentHeight);
+                            ctx.beginPath();
+                            ctx.arc(s.x, s.y, 32*node.data.randomRadius, 0,2*Math.PI);
+                            ctx.clip();
+                            ctx.closePath();
                         }
                     }else{
                         // First time seeing an image with this src address, so add it to our set of image objects
